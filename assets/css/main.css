@@ -151,6 +151,11 @@ a:hover {
 .grid {
   margin: 0 auto;
 }
+.grid-center{
+  margin: 0 auto;
+  width: 800px;
+}
+
 .grid
 .col-1-3,
 .col-2-3 {
@@ -179,12 +184,10 @@ a:hover {
 	padding-bottom: 40px;
 }
 .block-div-2{
-	display: table;
-	padding-left:350px;
-	padding-right:200px;
 	padding-top: 20px;
 	padding-bottom: 40px;
-	justify-content: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .block-div-3{
