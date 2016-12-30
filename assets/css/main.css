@@ -1,0 +1,347 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+
+
+body {
+  color: #888;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+h1, h2, h3, h4 {
+  color: #fff;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 21px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  color: #888;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+p{
+  font-size: 15px;
+}
+strong {
+  font-weight: 400;
+}
+cite, em {
+  font-style: italic;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+.pub-a{
+	color: #888;
+}
+.pub-a:hover{
+	color:#000;
+}
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+
+.img-circle{
+  border-radius: 50%;
+}
+
+.bgframe{
+  background-color: #000;
+  margin:0 0;
+  width:100%;
+  padding: 180px 0px 180px 0px;
+}
+.container{
+  margin:0 auto;
+  width:100%;
+  padding: 44px 0px 44px 0px;
+  float: center;
+}
+
+.hero{
+  line-height: 44px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.logo {
+  /*border-top: 4px solid #000;*/
+  padding: 40px 0 22px 0;
+  float: center;
+  font-size: 30px;
+  line-height: 35px;
+}
+.tagline {
+  padding: 2px 0 22px 0;
+  float: center;
+  font-size: 15px;
+  /*line-height: 25px;*/
+}
+.grid {
+  margin: 0 auto;
+}
+.grid
+.col-1-3,
+.col-2-3 {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+.col-1-3,
+.col-2-3  {
+  display: inline-block;
+  vertical-align: top;
+  float: center;
+}
+.col-1-3{
+  width:40.33%;
+}
+.col-2-3{
+  width:66.66%;
+}
+
+.block-div{
+	display: table;
+	padding-left:200px;
+	padding-right:200px;
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+.block-div-2{
+	display: table;
+	padding-left:350px;
+	padding-right:200px;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	justify-content: center;
+}
+
+.block-div-3{
+  display: table-cell;
+  padding-left:30px;
+  padding-right:20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  vertical-align: top;
+}
+
+img {
+  vertical-align: middle;
+  display: table-cell;
+  padding: 40px;
+}
+span {
+  vertical-align: middle;
+  display: table-cell;
+  margin:10px;
+}
+
+.work,
+.edu{
+  background-color: #808080
+}
+
+.about{
+	color:#000;
+}
+
+.sub-head{
+  color: #fff;
+  padding: 5px 0 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.side-head{
+	color:#fff;
+}
+
+.primary-footer {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  padding-bottom: 44px;
+  padding-top: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.btn{
+  border-radius:5px;
+  display:inline-block;
+  margin: 10px 10px 0px 0px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  float: right;
+}
+
+.btn-brdr{
+  border:1px solid #dfe2e5;
+  padding:10px 30px;
+  text-align: right;
+}
+/* Wrapper */
+.icon-button {
+  background-color: white;
+  border-radius: 3.6rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2.0rem;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  margin: 0 5px;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 3.6rem;
+}
+
+/* Circle */
+.icon-button span {
+  border-radius: 0;
+  display: block;
+  height: 0;
+  left: 50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+  width: 0;
+}
+.icon-button:hover span {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 3.6rem;
+  margin: -1.8rem;
+}
+.twitter span {
+  background-color: #4099ff;
+}
+.facebook span {
+  background-color: #3B5998;
+}
+.linkedin span {
+  background-color: #0075B5;
+}
+.github span {
+  background-color: #000;
+}
+
+/* Icons */
+.icon-button i {
+  background: none;
+  color: white;
+  height: 3.6rem;
+  left: 0;
+  line-height: 3.6rem;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+       -o-transition: all 0.3s;
+          transition: all 0.3s;
+  width: 3.6rem;
+  z-index: 10;
+}
+.icon-button .icon-twitter {
+  color: #4099ff;
+}
+.icon-button .icon-facebook {
+  color: #3B5998;
+}
+.icon-button .icon-google-plus {
+  color: #db5a3c;
+}
+.icon-button .icon-linkedin {
+  color: #0075B5;
+}
+.icon-button .icon-github {
+  color: #000;
+}
+.icon-button:hover .icon-twitter,
+.icon-button:hover .icon-facebook,
+.icon-button:hover .icon-linkedin {
+  color: white;
+}
+.icon-button:hover .icon-github{
+  color:#000;
+}
