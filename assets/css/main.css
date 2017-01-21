@@ -306,10 +306,12 @@ span {
 .linkedin span {
   background-color: #0075B5;
 }
-.github span {
-  background-color: #000;
+.medium span {
+  background-color: rgb( 0 , 229 , 107 );
 }
-
+.github span{
+  background-color: #4078c0
+}
 /* Icons */
 .icon-button i {
   background: none;
@@ -339,13 +341,15 @@ span {
   color: #0075B5;
 }
 .icon-button .icon-github {
-  color: #000;
+  color: #4078c0;
+}
+.icon-button .icon-medium {
+  color: rgb( 0 , 229 , 107 ) ;
 }
 .icon-button:hover .icon-twitter,
 .icon-button:hover .icon-facebook,
-.icon-button:hover .icon-linkedin {
-  color: white;
-}
+.icon-button:hover .icon-linkedin,
+.icon-button:hover .icon-medium,
 .icon-button:hover .icon-github{
-  color:#000;
+  color: white;
 }
