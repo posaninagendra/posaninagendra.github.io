@@ -4,7 +4,7 @@
  <title>Nagendra Posani</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-03-23T01:15:41-04:00</updated>
+ <updated>2017-03-23T01:21:55-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Nagendra Posani</name>
@@ -17,15 +17,15 @@
    <link href="http://localhost:4000/2017/03/22/elastic-search/"/>
    <updated>2017-03-22T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/03/22/elastic-search</id>
-   <content type="html">&lt;p&gt;When I first heard of &lt;a href=&quot;https://elastic.co&quot;&gt;Elastic Search&lt;/a&gt; from my friend, I imagined it to be an easily scalable search engine from the word elastic. I&amp;#39;m fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by &lt;a href=&quot;http://thedudeabides.com/&quot;&gt;Shay Banon&lt;/a&gt;. It provides various features including distributed, multitenant, reliable and scalable. &lt;/p&gt;
+   <content type="html">&lt;p&gt;When I first heard of &lt;a href=&quot;https://elastic.co&quot;&gt;Elastic Search&lt;/a&gt; from my friend, I imagined it to be an easily scalable search engine from the word elastic. I’m fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by &lt;a href=&quot;http://thedudeabides.com/&quot;&gt;Shay Banon&lt;/a&gt;. It provides various features including distributed, multitenant, reliable and scalable.&lt;/p&gt;
 
 &lt;p&gt;We all use google for searching, when we do a search query we get the results in few fraction of seconds, ever wonder what goes behind the scenes to implement such a robust efficient system? I was intrigued with this idea of making it possible to set up such a powerful search engine to our applications. Imagine that you have a system or an application with huge data and you want to provide search feature to the customers of the application so that they can retrieve the data by searching. As an example lets imagine that you have a file storing application where users can store their files and mark each of them as public or private, public files are visible to all the users of the application and private files are visible only to the user.&lt;/p&gt;
 
-&lt;p&gt;Let us say now you want to provide a search feature to this application so that users can search the documents or full-text search of their files or public files. This problem statement comes with a bunch of other problems like reliability, efficiency, and scalability. Let us see what are these additional problems. The system we develop to solve this search problem should be reliable, meaning it shouldn&amp;#39;t fail under any circumstances, no single point of failure or system crash etc. It should be efficient, we don&amp;#39;t want the search to take few seconds to retrieve the results if so no one is going to use the system. Let us imagine that we have implemented the search and now suddenly your application is a huge success and there is a sudden increase in traffic in terms of users. The system should be able to scale to serve the users. Scalability is the primary issue of many applications and services. So, our idea of adding simple search to the application has got so many twists. One way to get away with this problem is to use well-known search engines, Elastic Search is one of them. &lt;/p&gt;
+&lt;p&gt;Let us say now you want to provide a search feature to this application so that users can search the documents or full-text search of their files or public files. This problem statement comes with a bunch of other problems like reliability, efficiency, and scalability. Let us see what are these additional problems. The system we develop to solve this search problem should be reliable, meaning it shouldn’t fail under any circumstances, no single point of failure or system crash etc. It should be efficient, we don’t want the search to take few seconds to retrieve the results if so no one is going to use the system. Let us imagine that we have implemented the search and now suddenly your application is a huge success and there is a sudden increase in traffic in terms of users. The system should be able to scale to serve the users. Scalability is the primary issue of many applications and services. So, our idea of adding simple search to the application has got so many twists. One way to get away with this problem is to use well-known search engines, Elastic Search is one of them.&lt;/p&gt;
 
-&lt;p&gt;Elastic search is a distributed system, the best part of any distributed system is it can be easily extended to provide reliability as there won&amp;#39;t be any single point failures and scalability as we can add more machines to multiple its capabilities. Elastic Search indexes the shards (a horizontal partition of the database), it maintains one or more replicas of shards so that the operations are performed in any of these shards. It provides &lt;a href=&quot;https://www.elastic.co/blog/found-multi-tenancy&quot;&gt;multi-tenancy&lt;/a&gt; with multi types by having more than one index or sharing the indexes across the tenants. It provides RESTful and Java APIs as it is written in Java. The motivation behind the RESTful API is to provide a common interface to use by other programming languages. It is document oriented so no need for upfront schema, the schema can be defined per type for customization of the indexing process. It provides Real-Time search, meaning we can search in the data that is just added, Elastic Search provides &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html&quot;&gt;Near Real Time Search&lt;/a&gt;, with the development of per-segment search, the delay between indexing a document and making it visible to search is dropped drastically. More importantly, it is an open source making it available for everyone and shares a large developer community to maintain.   &lt;/p&gt;
+&lt;p&gt;Elastic search is a distributed system, the best part of any distributed system is it can be easily extended to provide reliability as there won’t be any single point failures and scalability as we can add more machines to multiple its capabilities. Elastic Search indexes the shards (a horizontal partition of the database), it maintains one or more replicas of shards so that the operations are performed in any of these shards. It provides &lt;a href=&quot;https://www.elastic.co/blog/found-multi-tenancy&quot;&gt;multi-tenancy&lt;/a&gt; with multi types by having more than one index or sharing the indexes across the tenants. It provides RESTful and Java APIs as it is written in Java. The motivation behind the RESTful API is to provide a common interface to use by other programming languages. It is document oriented so no need for upfront schema, the schema can be defined per type for customization of the indexing process. It provides Real-Time search, meaning we can search in the data that is just added, Elastic Search provides &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html&quot;&gt;Near Real Time Search&lt;/a&gt;, with the development of per-segment search, the delay between indexing a document and making it visible to search is dropped drastically. More importantly, it is an open source making it available for everyone and shares a large developer community to maintain.&lt;/p&gt;
 
-&lt;p&gt;Coming to what I&amp;#39;m working on, I&amp;#39;m developing the Elastic Search Client Library for iOS, it was the initial idea of my friend &lt;a href=&quot;https://github.com/siddharthlatest&quot;&gt;Siddharth&lt;/a&gt; at &lt;a href=&quot;https://appbase.io&quot;&gt;AppBase&lt;/a&gt; to create client-side libraries. The library essentially creates an object reference to the server for writing, reading, and streaming using the RESTful APIs of the search engine. AppBase GitHub has already few libraries (&lt;a href=&quot;https://github.com/appbaseio/appbase-js&quot;&gt;JS&lt;/a&gt;, &lt;a href=&quot;https://github.com/appbaseio/appbase-droid&quot;&gt;Android&lt;/a&gt; and &lt;a href=&quot;https://github.com/appbaseio-apps/elasticsearch-swift&quot;&gt;iOS&lt;/a&gt;) that are available. Please take a look at them.   &lt;/p&gt;
+&lt;p&gt;Coming to what I’m working on, I’m developing the Elastic Search Client Library for iOS, it was the initial idea of my friend &lt;a href=&quot;https://github.com/siddharthlatest&quot;&gt;Siddharth&lt;/a&gt; at &lt;a href=&quot;https://appbase.io&quot;&gt;AppBase&lt;/a&gt; to create client-side libraries. The library essentially creates an object reference to the server for writing, reading, and streaming using the RESTful APIs of the search engine. AppBase GitHub has already few libraries (&lt;a href=&quot;https://github.com/appbaseio/appbase-js&quot;&gt;JS&lt;/a&gt;, &lt;a href=&quot;https://github.com/appbaseio/appbase-droid&quot;&gt;Android&lt;/a&gt; and &lt;a href=&quot;https://github.com/appbaseio-apps/elasticsearch-swift&quot;&gt;iOS&lt;/a&gt;) that are available. Please take a look at them.&lt;/p&gt;
 </content>
  </entry>
  
@@ -34,26 +34,26 @@
    <link href="http://localhost:4000/2017/03/22/a-story-of-swift/"/>
    <updated>2017-03-22T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/03/22/a-story-of-swift</id>
-   <content type="html">&lt;p&gt;I started my career as Software Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza&lt;/a&gt; in January 2015, within few weeks of my joining, I was asked to join the iOS development team. I was too excited to learn something new, a new technology, a new language with my background and liking towards Python, I was expecting my new language would be much more fun to learn and I ended up in learning 30+ years old language with little OOPs init. It took some time for me to know the disaster of the language by working on few projects, after writing few thousands of lines of code. I wasn&amp;#39;t alone, there are many who feel the same. One fine day when I was browsing about the best languages to work with I was surprised to see the new language that Apple is developing called &amp;#39;Swift&amp;#39;. The first thought in my head was why my mentor hasn&amp;#39;t asked me to learn something new in the community, why are we going backward not learning the language that comes with more merit than what its predecessor has to provide. This happened in mid-March 2015, the next day I walk into my mentor&amp;#39;s office and asked him why did he betray me (Sorry for being too dramatic, but I was frustrated). The first thing that I heard from him was a negative comment, the language is very immature to adopt, it is not in its stable state and we can&amp;#39;t afford it right now in our projects. Which is a valid point, but I was intrigued with its continuous evolution, how it is changing over the years to be in a better shape and serve well. From then I&amp;#39;m reading every bit of it through blogs, articles etc. Here is a quick story about this new language in the block, &lt;em&gt;Swift&lt;/em&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I started my career as Software Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza&lt;/a&gt; in January 2015, within few weeks of my joining, I was asked to join the iOS development team. I was too excited to learn something new, a new technology, a new language with my background and liking towards Python, I was expecting my new language would be much more fun to learn and I ended up in learning 30+ years old language with little OOPs init. It took some time for me to know the disaster of the language by working on few projects, after writing few thousands of lines of code. I wasn’t alone, there are many who feel the same. One fine day when I was browsing about the best languages to work with I was surprised to see the new language that Apple is developing called ‘Swift’. The first thought in my head was why my mentor hasn’t asked me to learn something new in the community, why are we going backward not learning the language that comes with more merit than what its predecessor has to provide. This happened in mid-March 2015, the next day I walk into my mentor’s office and asked him why did he betray me (Sorry for being too dramatic, but I was frustrated). The first thing that I heard from him was a negative comment, the language is very immature to adopt, it is not in its stable state and we can’t afford it right now in our projects. Which is a valid point, but I was intrigued with its continuous evolution, how it is changing over the years to be in a better shape and serve well. From then I’m reading every bit of it through blogs, articles etc. Here is a quick story about this new language in the block, &lt;em&gt;Swift&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;When I heard about Swift, I also thought that why would a tech giant company like Apple want to replace their own legacy language Objective-C instead of upgrading it. Creating a new language in 2014 is a big decision while there are many alternatives in the community. The principle behind creating this new language is to have a compiled, functional programming language faster, safer and lighter language that can easily be adopted. The current alternatives are C++, Java, Python, Ruby etc. The performance comparison of simple storing operation of these languages with the swift is as follows. &lt;/p&gt;
+&lt;p&gt;When I heard about Swift, I also thought that why would a tech giant company like Apple want to replace their own legacy language Objective-C instead of upgrading it. Creating a new language in 2014 is a big decision while there are many alternatives in the community. The principle behind creating this new language is to have a compiled, functional programming language faster, safer and lighter language that can easily be adopted. The current alternatives are C++, Java, Python, Ruby etc. The performance comparison of simple storing operation of these languages with the swift is as follows.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;C++ -o3 : &lt;strong&gt;0.05s&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;C++ -o0 : 0.4s&lt;/li&gt;
-&lt;li&gt;Java : 0.2s&lt;/li&gt;
-&lt;li&gt;Python with PyPy: 0.5s&lt;/li&gt;
-&lt;li&gt;Python : 12s&lt;/li&gt;
-&lt;li&gt;Swift -Ofast : &lt;strong&gt;0.05s&lt;/strong&gt;
-&lt;br&gt;
+  &lt;li&gt;C++ -o3 : &lt;strong&gt;0.05s&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;C++ -o0 : 0.4s&lt;/li&gt;
+  &lt;li&gt;Java : 0.2s&lt;/li&gt;
+  &lt;li&gt;Python with PyPy: 0.5s&lt;/li&gt;
+  &lt;li&gt;Python : 12s&lt;/li&gt;
+  &lt;li&gt;Swift -Ofast : &lt;strong&gt;0.05s&lt;/strong&gt;
+&lt;br /&gt;
 &lt;sub&gt;&lt;sup&gt;&lt;em&gt;&lt;a href=&quot;https://www.quora.com/Why-would-Apple-introduce-new-programming-languages-e-g-Swift-instead-of-embracing-an-existing-one/answer/Glyn-Williams?srid=cSpD&quot;&gt;Source&lt;/a&gt;&lt;/em&gt; &lt;/sup&gt;&lt;/sub&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;None of the alternative language fits the requirement but the closest of all are C++ and Java. We know that Java belongs to someone else, needs a virtual machine and garbage collector. Apple already supported C++, to some extent, we can develop apps in C++ but to use Cocoa (Apple&amp;#39;s UI ToolKit) we may have to switch to ObjC as Cocoa is an ObjC framework. Replacing ObjC a complicated C-based language with another complicated C-based language doesn&amp;#39;t sound progress. The other alternatives Python and Ruby don&amp;#39;t fit the requirements as they are not compiled languages which were one of the objectives to take advantage of compiler technology. As we know Apple is famous for taking bold steps. Fundamentally Swift has elements from all these languages which makes it easier to adopt. &lt;/p&gt;
+&lt;p&gt;None of the alternative language fits the requirement but the closest of all are C++ and Java. We know that Java belongs to someone else, needs a virtual machine and garbage collector. Apple already supported C++, to some extent, we can develop apps in C++ but to use Cocoa (Apple’s UI ToolKit) we may have to switch to ObjC as Cocoa is an ObjC framework. Replacing ObjC a complicated C-based language with another complicated C-based language doesn’t sound progress. The other alternatives Python and Ruby don’t fit the requirements as they are not compiled languages which were one of the objectives to take advantage of compiler technology. As we know Apple is famous for taking bold steps. Fundamentally Swift has elements from all these languages which makes it easier to adopt.&lt;/p&gt;
 
-&lt;p&gt;Another interesting aspect of Swift is that it is strongly statically typed language. There are two philosophies here, static type and dynamic type languages. Type system assign rules to types like variables, expressions, functions or modules etc to provide a consistent interface between programs and enable compiler optimizations. The process of checking that the parts have been connected in a consistent way is called Type Checking, that can happen statically at compile time or dynamically at runtime. Statically typed languages are faster than dynamically typed languages. Swift is statically typed language, all classes are created during compile-time. Methods cannot be added on-the-fly and all types are known before the run time. Since everything is known beforehand, a compiler can optimize code without any problem. Objective-C, on the other hand, can’t optimize as effectively, because all dynamic languages work slower than static. Here is a good &lt;a href=&quot;https://yalantis.com/blog/is-swift-faster-than-objective-c/&quot;&gt;article&lt;/a&gt; that ran few experiments to measure the performance of swift with various operations. &lt;/p&gt;
+&lt;p&gt;Another interesting aspect of Swift is that it is strongly statically typed language. There are two philosophies here, static type and dynamic type languages. Type system assign rules to types like variables, expressions, functions or modules etc to provide a consistent interface between programs and enable compiler optimizations. The process of checking that the parts have been connected in a consistent way is called Type Checking, that can happen statically at compile time or dynamically at runtime. Statically typed languages are faster than dynamically typed languages. Swift is statically typed language, all classes are created during compile-time. Methods cannot be added on-the-fly and all types are known before the run time. Since everything is known beforehand, a compiler can optimize code without any problem. Objective-C, on the other hand, can’t optimize as effectively, because all dynamic languages work slower than static. Here is a good &lt;a href=&quot;https://yalantis.com/blog/is-swift-faster-than-objective-c/&quot;&gt;article&lt;/a&gt; that ran few experiments to measure the performance of swift with various operations.&lt;/p&gt;
 
-&lt;p&gt;Coming back to swift&amp;#39;s origin, it was first released in June 2014, from then it continuously changed over the years. The main design objective of Swift is to make it easier to learn and adopt with its syntactic sugar syntax along with other goals. Swift is intended to be more resilient to enormous code (safer) than ObjC and more concise. Swift adds the concept of protocol extensibility, an extensibility system that can be applied to types, structs, and classes. Apple promotes this as a real change in programming paradigms they term &amp;quot;protocol-oriented programming&amp;quot;. Swift initially announced in 2014 WWDC conference underwent an upgrade to Swift 1.2. In 2015 WWDC it is upgraded to Swift 2, later that year in December it is open sourced under Apache License from Swift 2.2 version. In 2016 WWDC Swift 3 was announced with a lot of changes to the API naming conventions along with other changes. In March 2017, less than three years after its official debut, Swift made the top 10 in the monthly &lt;a href=&quot;https://www.tiobe.com/tiobe-index/&quot;&gt;TIOBE index&lt;/a&gt; ranking of popular programming languages.                &lt;/p&gt;
+&lt;p&gt;Coming back to swift’s origin, it was first released in June 2014, from then it continuously changed over the years. The main design objective of Swift is to make it easier to learn and adopt with its syntactic sugar syntax along with other goals. Swift is intended to be more resilient to enormous code (safer) than ObjC and more concise. Swift adds the concept of protocol extensibility, an extensibility system that can be applied to types, structs, and classes. Apple promotes this as a real change in programming paradigms they term “protocol-oriented programming”. Swift initially announced in 2014 WWDC conference underwent an upgrade to Swift 1.2. In 2015 WWDC it is upgraded to Swift 2, later that year in December it is open sourced under Apache License from Swift 2.2 version. In 2016 WWDC Swift 3 was announced with a lot of changes to the API naming conventions along with other changes. In March 2017, less than three years after its official debut, Swift made the top 10 in the monthly &lt;a href=&quot;https://www.tiobe.com/tiobe-index/&quot;&gt;TIOBE index&lt;/a&gt; ranking of popular programming languages.&lt;/p&gt;
 </content>
  </entry>
  
@@ -62,109 +62,107 @@
    <link href="http://localhost:4000/2017/03/20/iOS-Projects/"/>
    <updated>2017-03-20T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/03/20/iOS-Projects</id>
-   <content type="html">&lt;p&gt;I served as iOS Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza Technologies&lt;/a&gt;, in Bangalore for 1.7 years. During this period I worked on various projects and repeatedly recognized for my performance in developing complex mobile applications for multimillion-dollar clients. I am responsible for full lifecycle development of iOS mobile applications, from initial requirement gathering to architecture design, coding, dev-testing, and shipping it to App Store. I have developed about 12 iPhone and 2 Apple Watch applications to various clients, which are deployed on App Store, few of them got more than a million downloads. &lt;/p&gt;
+   <content type="html">&lt;p&gt;I served as iOS Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza Technologies&lt;/a&gt;, in Bangalore for 1.7 years. During this period I worked on various projects and repeatedly recognized for my performance in developing complex mobile applications for multimillion-dollar clients. I am responsible for full lifecycle development of iOS mobile applications, from initial requirement gathering to architecture design, coding, dev-testing, and shipping it to App Store. I have developed about 12 iPhone and 2 Apple Watch applications to various clients, which are deployed on App Store, few of them got more than a million downloads.&lt;/p&gt;
 
-&lt;p&gt;Working at Kuliza helped me in developing client-facing skills, I have participated in proposals and presentations on how to model the application to solve the client problems. I received Best Developer awards for my innovative approaches used to solve complex problems. I got a chance to mentor few interns during my tenure, which helped in developing mentorship skills like planning various events to teach them various aspects of app development through tech talks, hackathons, code reviewing, sprint discussions etc. &lt;/p&gt;
+&lt;p&gt;Working at Kuliza helped me in developing client-facing skills, I have participated in proposals and presentations on how to model the application to solve the client problems. I received Best Developer awards for my innovative approaches used to solve complex problems. I got a chance to mentor few interns during my tenure, which helped in developing mentorship skills like planning various events to teach them various aspects of app development through tech talks, hackathons, code reviewing, sprint discussions etc.&lt;/p&gt;
 
-&lt;h2&gt;Responsibilities&lt;/h2&gt;
-
+&lt;h2 id=&quot;responsibilities&quot;&gt;Responsibilities&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Design and develop applications for the iOS platform.&lt;/li&gt;
-&lt;li&gt;Define contracts with the backend for consuming APIs.&lt;/li&gt;
-&lt;li&gt;Identify and correct bottlenecks and fix bugs.&lt;/li&gt;
-&lt;li&gt;Maintain code quality and app performance.&lt;/li&gt;
+  &lt;li&gt;Design and develop applications for the iOS platform.&lt;/li&gt;
+  &lt;li&gt;Define contracts with the backend for consuming APIs.&lt;/li&gt;
+  &lt;li&gt;Identify and correct bottlenecks and fix bugs.&lt;/li&gt;
+  &lt;li&gt;Maintain code quality and app performance.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Skills&lt;/h2&gt;
-
+&lt;h2 id=&quot;skills&quot;&gt;Skills&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Proficient with Objective-C or Swift (depending on project requirements), and Cocoa Touch&lt;/li&gt;
-&lt;li&gt;Experience with iOS frameworks such as Core Data, etc.&lt;/li&gt;
-&lt;li&gt;Experience with offline storage, threading, and performance tuning&lt;/li&gt;
-&lt;li&gt;Familiarity with RESTful APIs to connect iOS applications to back-end services&lt;/li&gt;
-&lt;li&gt;Knowledge of other web technologies and UI/UX standards&lt;/li&gt;
-&lt;li&gt;Familiarity with cloud message APIs and push notifications&lt;/li&gt;
-&lt;li&gt;Proficient understanding of code versioning tools such as Git&lt;/li&gt;
-&lt;li&gt;Shipping applications to App Store, Certificate signing and Profiling.&lt;br&gt;&lt;/li&gt;
+  &lt;li&gt;Proficient with Objective-C or Swift (depending on project requirements), and Cocoa Touch&lt;/li&gt;
+  &lt;li&gt;Experience with iOS frameworks such as Core Data, etc.&lt;/li&gt;
+  &lt;li&gt;Experience with offline storage, threading, and performance tuning&lt;/li&gt;
+  &lt;li&gt;Familiarity with RESTful APIs to connect iOS applications to back-end services&lt;/li&gt;
+  &lt;li&gt;Knowledge of other web technologies and UI/UX standards&lt;/li&gt;
+  &lt;li&gt;Familiarity with cloud message APIs and push notifications&lt;/li&gt;
+  &lt;li&gt;Proficient understanding of code versioning tools such as Git&lt;/li&gt;
+  &lt;li&gt;Shipping applications to App Store, Certificate signing and Profiling.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Projects&lt;/h2&gt;
-
+&lt;h2 id=&quot;projects&quot;&gt;Projects&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Urban Ladder iOS Application
-
-&lt;ul&gt;
-&lt;li&gt;Developed the India’s top e-commerce furniture application&lt;/li&gt;
-&lt;li&gt;Developed their iPhone and Apple Watch application from scratch.&lt;/li&gt;
-&lt;li&gt;Developed the design, architecture and shipped the apps to App Store.&lt;/li&gt;
-&lt;li&gt;Implemented challenging Look Creator feature a seamless GCD threading based user interactive tool to create looks of furniture.&lt;/li&gt;
-&lt;li&gt;Improved app performance.&lt;/li&gt;
-&lt;li&gt;Ported the application from Objective-C to Swift&lt;/li&gt;
-&lt;li&gt;Languages: Objective-C and Swift&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/urban-ladder/id959886087?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OML Insider&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Developed event ticket generator/validator application&lt;/li&gt;
-&lt;li&gt;Implemented offline support using Core Data storage with auto synchronizing with server when connected with the network.&lt;/li&gt;
-&lt;li&gt;Improving app performance for handling huge data&lt;/li&gt;
-&lt;li&gt;Languages: Swift&lt;/li&gt;
-&lt;li&gt;App is distributed internally to the distributors in the organization&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Zephyr&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Developed front end web access to Zephyr client&lt;/li&gt;
-&lt;li&gt;Seamless switch to multiple environments&lt;/li&gt;
-&lt;li&gt;Languages: Swift&lt;/li&gt;
-&lt;li&gt;App is distributed internally to the clients of the organization&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Fitternity&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Designed and developed the India’s top gym/yoga discover application&lt;/li&gt;
-&lt;li&gt;Used UIKit, Core Animations and created Custom Animations&lt;/li&gt;
-&lt;li&gt;App performance improvement&lt;/li&gt;
-&lt;li&gt;Implemented offline support using the Core Data storage&lt;/li&gt;
-&lt;li&gt;Languages: Swift&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/fitternity/id1079862968?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Turvo&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Developed the iPhone application&lt;/li&gt;
-&lt;li&gt;Used Core Data, Location Service, and UIKit&lt;/li&gt;
-&lt;li&gt;Implemented threading, offline storage, and performance tuning&lt;/li&gt;
-&lt;li&gt;Language: Swift&lt;/li&gt;
-&lt;li&gt;App is yet to release&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Cafe Coffee Day&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Designed and Developed iOS application for CCD, India&amp;#39;s most liked cafe franchise&lt;/li&gt;
-&lt;li&gt;Used UIKit, MVVM design pattern and Core Data.&lt;/li&gt;
-&lt;li&gt;Created custom animations&lt;/li&gt;
-&lt;li&gt;App performance improvement&lt;/li&gt;
-&lt;li&gt;Language: Swift&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/cafe-coffee-day/id1123594528?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;BlackBuck&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Developed iPhone application &lt;/li&gt;
-&lt;li&gt;Used Core Data, UIKit and Location Services&lt;/li&gt;
-&lt;li&gt;Language: Swift&lt;/li&gt;
-&lt;li&gt;App is yet to release&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Vyomo&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Developed iPhone application &lt;/li&gt;
-&lt;li&gt;Languages: Swift&lt;/li&gt;
-&lt;li&gt;App is distributed offline to the clients. &lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+  &lt;li&gt;Urban Ladder iOS Application
+    &lt;ul&gt;
+      &lt;li&gt;Developed the India’s top e-commerce furniture application&lt;/li&gt;
+      &lt;li&gt;Developed their iPhone and Apple Watch application from scratch.&lt;/li&gt;
+      &lt;li&gt;Developed the design, architecture and shipped the apps to App Store.&lt;/li&gt;
+      &lt;li&gt;Implemented challenging Look Creator feature a seamless GCD threading based user interactive tool to create looks of furniture.&lt;/li&gt;
+      &lt;li&gt;Improved app performance.&lt;/li&gt;
+      &lt;li&gt;Ported the application from Objective-C to Swift&lt;/li&gt;
+      &lt;li&gt;Languages: Objective-C and Swift&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/urban-ladder/id959886087?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;OML Insider
+    &lt;ul&gt;
+      &lt;li&gt;Developed event ticket generator/validator application&lt;/li&gt;
+      &lt;li&gt;Implemented offline support using Core Data storage with auto synchronizing with server when connected with the network.&lt;/li&gt;
+      &lt;li&gt;Improving app performance for handling huge data&lt;/li&gt;
+      &lt;li&gt;Languages: Swift&lt;/li&gt;
+      &lt;li&gt;App is distributed internally to the distributors in the organization&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Zephyr
+    &lt;ul&gt;
+      &lt;li&gt;Developed front end web access to Zephyr client&lt;/li&gt;
+      &lt;li&gt;Seamless switch to multiple environments&lt;/li&gt;
+      &lt;li&gt;Languages: Swift&lt;/li&gt;
+      &lt;li&gt;App is distributed internally to the clients of the organization&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Fitternity
+    &lt;ul&gt;
+      &lt;li&gt;Designed and developed the India’s top gym/yoga discover application&lt;/li&gt;
+      &lt;li&gt;Used UIKit, Core Animations and created Custom Animations&lt;/li&gt;
+      &lt;li&gt;App performance improvement&lt;/li&gt;
+      &lt;li&gt;Implemented offline support using the Core Data storage&lt;/li&gt;
+      &lt;li&gt;Languages: Swift&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/fitternity/id1079862968?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Turvo
+    &lt;ul&gt;
+      &lt;li&gt;Developed the iPhone application&lt;/li&gt;
+      &lt;li&gt;Used Core Data, Location Service, and UIKit&lt;/li&gt;
+      &lt;li&gt;Implemented threading, offline storage, and performance tuning&lt;/li&gt;
+      &lt;li&gt;Language: Swift&lt;/li&gt;
+      &lt;li&gt;App is yet to release&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cafe Coffee Day
+    &lt;ul&gt;
+      &lt;li&gt;Designed and Developed iOS application for CCD, India’s most liked cafe franchise&lt;/li&gt;
+      &lt;li&gt;Used UIKit, MVVM design pattern and Core Data.&lt;/li&gt;
+      &lt;li&gt;Created custom animations&lt;/li&gt;
+      &lt;li&gt;App performance improvement&lt;/li&gt;
+      &lt;li&gt;Language: Swift&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/in/app/cafe-coffee-day/id1123594528?mt=8&quot;&gt;iTunes App Link&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;BlackBuck
+    &lt;ul&gt;
+      &lt;li&gt;Developed iPhone application&lt;/li&gt;
+      &lt;li&gt;Used Core Data, UIKit and Location Services&lt;/li&gt;
+      &lt;li&gt;Language: Swift&lt;/li&gt;
+      &lt;li&gt;App is yet to release&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vyomo
+    &lt;ul&gt;
+      &lt;li&gt;Developed iPhone application&lt;/li&gt;
+      &lt;li&gt;Languages: Swift&lt;/li&gt;
+      &lt;li&gt;App is distributed offline to the clients.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+
 </content>
  </entry>
  
@@ -177,18 +175,18 @@
 
 &lt;p&gt;In such scenarios, there is no network infrastructure to establish an end-to-end communication path between two nodes. The messages have to be relayed via intermediate nodes that hold on to the message till they meet another node. Distribution of a message to a group of recipients can be useful in such an environment. For example, in a disaster recovery scene, it is vital to disseminate information about the victims and potential hazards among the rescue workers where there is no central arbiter. In battlefield, soldiers in a squad need to inform each other about their surrounding environment.&lt;/p&gt;
 
-&lt;p&gt;To disseminate messages in an efficient manner, various protocols are defined for unicast routing in DTNs. This paper studies a subset of various protocols for delay tolerant networks: First Contact, Direct Delivery, Epidemic, Spray-and-Wait and PRoPHET. A property that sets these routing protocols apart from the ones widely applicable in connected networks is that they use a store and forward approach to transmit the message to the intended end recipient. These protocols have been chosen in such a manner that few of them are single copy protocols - first contact and direct delivery, epidemic uses flooding as the underlying approach, spray and wait can be classified as controlled flooding and PRoPHET is the probability based protocol that uses delivery predictability as a metric. &lt;/p&gt;
+&lt;p&gt;To disseminate messages in an efficient manner, various protocols are defined for unicast routing in DTNs. This paper studies a subset of various protocols for delay tolerant networks: First Contact, Direct Delivery, Epidemic, Spray-and-Wait and PRoPHET. A property that sets these routing protocols apart from the ones widely applicable in connected networks is that they use a store and forward approach to transmit the message to the intended end recipient. These protocols have been chosen in such a manner that few of them are single copy protocols - first contact and direct delivery, epidemic uses flooding as the underlying approach, spray and wait can be classified as controlled flooding and PRoPHET is the probability based protocol that uses delivery predictability as a metric.&lt;/p&gt;
 
 &lt;p&gt;Various approaches can be taken to enable and implement multicasting in the protocols discussed. A unicast based multicast is the most straightforward way of doing it, but can have potential issues. Other approaches include having an Oracle or a logical group based identifier. Based on the advantages offered by the logical unique identifier approach, it was chosen and multicast in delay tolerant networks was implemented for various protocols. Implementation was done using the ONE(Opportunistic Network Environment) simulator which has been designed for emulating delay tolerant networks and provides support for various protocols and mobility models. Leveraging the power of ONE, we analysed and evaluated various scenarios to measure the performance of the protocols based on different parameters.&lt;/p&gt;
 
 &lt;p&gt;Effective group based communication in real time scenarios can be utilized in various applications in delay tolerant networks.
 Having implemented the multicast functionality for various protocols in ONE simulator has helped us analyze the results of the simulations in various scenarios under varying movement models and carrier nodes. The results are highly dependent on the scenario in which particular protocol runs and there is no one single protocol which stands out in terms of all performance metrics mentioned in the evalutation section.&lt;/p&gt;
 
-&lt;p&gt;Probability based protocols can be very effective in scenarios where the knowledge base of each node to determine the probability of meeting every other node is accurate. PRoPHET exhibited overall decreased latency when it was given sufficient warm up time to establish the accurate knowledge. In many scenarios where there is no sufficient time to establish this knowledge base the performance of PRoPHET exhibits no significant added advantage. Scenarios like that of emergency where there is no sufficient time to establish knowledge base this protocol may not work optimally. However, in cases where this knowledge base can be established, like in case of battalion of Army, PRoPHET’s performance could be utilized for effective communication. &lt;/p&gt;
+&lt;p&gt;Probability based protocols can be very effective in scenarios where the knowledge base of each node to determine the probability of meeting every other node is accurate. PRoPHET exhibited overall decreased latency when it was given sufficient warm up time to establish the accurate knowledge. In many scenarios where there is no sufficient time to establish this knowledge base the performance of PRoPHET exhibits no significant added advantage. Scenarios like that of emergency where there is no sufficient time to establish knowledge base this protocol may not work optimally. However, in cases where this knowledge base can be established, like in case of battalion of Army, PRoPHET’s performance could be utilized for effective communication.&lt;/p&gt;
 
-&lt;p&gt;Flood based protocols are highly reliant methods that make sure the message goes through but they can highly overwhelm a network and in real life scenarios this can lead to congestion and eventually communication failure for all the nodes. Controlled flooding can be an optimisation over such an approach to control the network traffic. Direct Delivery and First Contact can also be used depending on the need of the application and urgency of the message to get delivered. &lt;/p&gt;
+&lt;p&gt;Flood based protocols are highly reliant methods that make sure the message goes through but they can highly overwhelm a network and in real life scenarios this can lead to congestion and eventually communication failure for all the nodes. Controlled flooding can be an optimisation over such an approach to control the network traffic. Direct Delivery and First Contact can also be used depending on the need of the application and urgency of the message to get delivered.&lt;/p&gt;
 
-&lt;p&gt;As a part of what can be done next, one may consider incorporating the dynamic nature of node for the purpose of analysis. A node can changes its nature (group id) within a single simulation. This may affect the performance metric severely specially in cases of probability based protocols which determine their knowledge with a single target node group in mind. Also one could imagine scenarios where few nodes belong to more than one group and its effects could be observed by simulating such scenarios once implementation support for the same has been provided. &lt;/p&gt;
+&lt;p&gt;As a part of what can be done next, one may consider incorporating the dynamic nature of node for the purpose of analysis. A node can changes its nature (group id) within a single simulation. This may affect the performance metric severely specially in cases of probability based protocols which determine their knowledge with a single target node group in mind. Also one could imagine scenarios where few nodes belong to more than one group and its effects could be observed by simulating such scenarios once implementation support for the same has been provided.&lt;/p&gt;
 </content>
  </entry>
  
@@ -199,23 +197,22 @@ Having implemented the multicast functionality for various protocols in ONE simu
    <id>http://localhost:4000/2016/06/14/ios-certificates-distribution</id>
    <content type="html">&lt;p&gt;Well, it is not a rocket science to create certificates and distribute the app to the testers/users, but if you are doing it for the first time you may have to google about the process. Often the developers get frustrated with Apple’s security scheme to distribute the app, but trust me that’s the prime reason why Apple’s App Store has many trusted apps over Android’s Play Store. Though there are many Stack Overflow links out there which helps you to finish this setup but I want to summarize and give a brief idea of everything related to the process of creating certificates, generating builds and uploading it to the App Store. I will divide the article into three sections, One, Development/Distribution Certificates, Two, Sharing builds through TestFlight, Three, Uploading it to App Store.&lt;/p&gt;
 
-&lt;h3&gt;Creating Development/Distribution Certificates&lt;/h3&gt;
-
+&lt;h3 id=&quot;creating-developmentdistribution-certificates&quot;&gt;Creating Development/Distribution Certificates&lt;/h3&gt;
 &lt;p&gt;First of all, we have to understand Apple’s terminology to identify its users, apps and devices authentication. There are three things that Apple attributes to an iOS app, identifier of the app, cryptographically certificated entity (certificates) and its devices (provisioning profiles).&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Identifier:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Identifier is a unique identifier of your app, known as bundle identifier. Which is also referred as Application Identifier because it is used to identify your application in App Store. Typically it has a reverse domain nomenclature e.g: com.companyname.appname. Let’s create this identifier in our developer account. Under the section of App ID’s we can create the application identifiers and explicitly mention the services it offers.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img1.png&quot; alt=&quot;img1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img1.png&quot; alt=&quot;img1&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Under App IDs we can see previously created identifiers also we can create new App IDs. Let’s go ahead and create a new App ID by clicking the plus button on the top-right side and it shows a new window to create the new app id. Here we have bunch of mandatory fields to fill, App Id Description (e.g: AppName), App Id Prefix (Apple generated developer team identifier) and App Id Suffix (unique identifier of our application). App Id suffix can be a unique identifier or could be a wildcard app id when we plan to use same services of different apps, depends on the organization and the app, we have to choose one and give an identifier. It is preferred to use the reverse domain pattern to name the application e.g: com.companyname.appname.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img2.png&quot; alt=&quot;img2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img2.png&quot; alt=&quot;img2&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Now, we have to select the services that we are offering in our app. Most common service that we use is Apple’s Push Notifications.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img3.png&quot; alt=&quot;img3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img3.png&quot; alt=&quot;img3&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we select the required services, we are done with creating the app id process but based on the chosen services we may need to do some other configuration steps, one such services (Push Notifications) I will explain how to setup the configurations at the end.&lt;/p&gt;
 
@@ -224,83 +221,82 @@ Having implemented the multicast functionality for various protocols in ONE simu
 &lt;p&gt;Apple provides the best security in terms of deploying the app through its security scheme. It is very flexible, there are many scenarios where it allows us to deploy the app.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Securely apps can be distributed through App Store as they are cryptographically signed by Apple’s&lt;/li&gt;
-&lt;li&gt;Enterprise or Organisations can distribute their apps securely without publishing it to App Store.&lt;/li&gt;
-&lt;li&gt;Developers can deploy development binaries to upto 100 their own devices for testing.&lt;/li&gt;
-&lt;li&gt;App developers can run a beta program by directly deploying correctly-signed apps to customers.&lt;/li&gt;
+  &lt;li&gt;Securely apps can be distributed through App Store as they are cryptographically signed by Apple’s&lt;/li&gt;
+  &lt;li&gt;Enterprise or Organisations can distribute their apps securely without publishing it to App Store.&lt;/li&gt;
+  &lt;li&gt;Developers can deploy development binaries to upto 100 their own devices for testing.&lt;/li&gt;
+  &lt;li&gt;App developers can run a beta program by directly deploying correctly-signed apps to customers.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Certificates: It is a cryptographic certificate issued by Apple. There are two different worlds that Apple looks at when it comes to deployment of apps, they are Development and Distribution. We can create certificates for these two cases. When we create a certificate we first have to create the certificate signing request from Mac, to define you as the entity/organisation who is requesting Apple to issue a certificate for either development/distribution. For this you have to create the request file through keyChain Access.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img4.png&quot; alt=&quot;img4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img4.png&quot; alt=&quot;img4&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Give the organization’s email id and name to create the request file.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img5.png&quot; alt=&quot;img5&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img5.png&quot; alt=&quot;img5&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we are done with creating the file, save it on your disk, and open developer account to create the certificate. Under the certificate section, we can see the list of certificates which are already issued by Apple, and by clicking the plus button on top-right corner we can create new certificate.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img6.png&quot; alt=&quot;img6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img6.png&quot; alt=&quot;img6&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have to select the type of certificate we want to issue, there are two types Development and Production. Development is often used to issue the certificate to deploy the app on developer’s device (to limited devices) for testing, but now apple automated this process. On the other hand, Production is used to issue the certificate to deploy the app on many devices either through App Store/ Ad-Hoc (to distribute internally in enterprises). In case of Production, based on the services and environment, we choose the appropriate option. Once we chose the options, continue to upload the request file to get the signing certificate.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img7.png&quot; alt=&quot;img7&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img7.png&quot; alt=&quot;img7&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Once we finish creating the certificate, download it on your disk and we can export the Apple signed certificate to other developers in .p12 form in order to avoid the dependency or single point of failure of the private key issued to this entity on this machine.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img8.png&quot; alt=&quot;img8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img8.png&quot; alt=&quot;img8&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Provisioning Profile:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Provisioning profile is the most confusing part of this process. It simply clubs the identifier and the certificate to the devices.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;Provisioning profile simply says that applications with this Identifier signed with this Certificate’s private key are allowed to run on these devices.&lt;/p&gt;
+  &lt;p&gt;Provisioning profile simply says that applications with this Identifier signed with this Certificate’s private key are allowed to run on these devices.&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;We can create provisioning profile again to two different worlds, development and distribution. Development profile has device limitations where as distribution is often used to deploy it on App Store or to distribute the app internally in the organization.&lt;/p&gt;
 
 &lt;p&gt;Configuration of Push Notifications: When we create the app identifier, if we have used any services like push notifications we have to configure it to the web servers. In order to setup this we have to create another certificate, as Apple wants to bring another level of security to bind the web server and app. Now that, we have already created the app id, click on edit, under the push notifications we can now see the additional configuration certificates.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img9.png&quot; alt=&quot;img9&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img9.png&quot; alt=&quot;img9&quot; /&gt;&lt;/p&gt;
 
-&lt;h3&gt;Sharing builds through TestFlight&lt;/h3&gt;
-
+&lt;h3 id=&quot;sharing-builds-through-testflight&quot;&gt;Sharing builds through TestFlight&lt;/h3&gt;
 &lt;p&gt;Developers often find it difficult to share the iOS binary file to users/testers. It is not as easy as Android developers share the build by attaching the .apk file as an attachment in the email. Apple won’t allow to deploy the app on the device with its tough security interface. Apple gives a default way of exporting the app in.ipa format file through Ad-Hoc profiles, but that is a tiresome process and the users should connect their devices to iTunes to get the .ipa file. There are many third party apps which makes this process easy by providing an interface to upload the app and give a downloadable link e.g: Fabric/Crashlytics, DIWAI, installrapp etc.&lt;/p&gt;
 
 &lt;p&gt;Apple acquired TestFlight an app sharing platform to make this process, on after its acquisition Apple updated its iOS operating system and which made it difficult to other third party apps to provide the platform to share the builds. Now, it is easy to share the build through Apple’s platform and to collect the feedback from the testers and see the crash reports right in the xcode without any hassle.&lt;/p&gt;
 
 &lt;p&gt;Let’s create a build and see the process of sharing the app through TestFlight.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img10.png&quot; alt=&quot;img10&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img10.png&quot; alt=&quot;img10&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Create a new app in iTunes connect, and give necessary information regarding the app. Archive the code with appropriate code signing certificates and provisioning profiles for the identifier. Once we archive the build, xcode opens the organizer.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img11.png&quot; alt=&quot;img11&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img11.png&quot; alt=&quot;img11&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Click on Upload to App Store and it upload the build to the app store. Once it is done, we can see this activity under Activity pane. At first apple does a sanity check on the APIs, assets and other entitlements offered in the app, once it is validated, it can be used to send to either App Store/TestFlight for testing.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img12.png&quot; alt=&quot;img12&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img12.png&quot; alt=&quot;img12&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To share the beta build for testing we can upload this build in TestFlight pane, by giving necessary app information.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img13.png&quot; alt=&quot;img13&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img13.png&quot; alt=&quot;img13&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The best part of the TestFlight is it records the sessions, installations and gives crash reports with lot of developer friendly details for debugging the app. We can see these crash reports directly in the xcode Organizer&amp;gt;Crashes.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img14.png&quot; alt=&quot;img14&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img14.png&quot; alt=&quot;img14&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;TestFlight categories the testers into two types, internal testers and external testers. Internal testers are the one’s who have developer accounts and wants to test the app, for them we can share the build directly. For external users we have to go for a Apple’s beta testing and then we will be able to share the build through email id, they will be able to install via TestFlight iOS app. We can add upto 2000 external users and 20 internal users for testing.&lt;/p&gt;
 
 &lt;p&gt;Each build that we share to external users expires in 60 days, and we can update the build by uploading the new builds.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img15.png&quot; alt=&quot;img15&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img15.png&quot; alt=&quot;img15&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Crash reports are beautifully shown in the xcode’s organizer, helps the developer to fix them.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img16.png&quot; alt=&quot;img16&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/ios-certificates-post/img16.png&quot; alt=&quot;img16&quot; /&gt;&lt;/p&gt;
 
-&lt;h3&gt;Uploading app to App Store&lt;/h3&gt;
+&lt;h3 id=&quot;uploading-app-to-app-store&quot;&gt;Uploading app to App Store&lt;/h3&gt;
 
 &lt;p&gt;Uploading the app to app store is relatively the easiest task of all. Through out the process Apple does several sanity checks to the build and throws error if the doesn’t comply the development guidelines. Most common errors are the assets alpha channel error, asset size mismatch and sometimes swift library errors. Once all the tests are passed we can submit the app for App Review, for formal approval of the app release, which might take 7–10 working days depending on the complexity of the app/third party app interactions etc. If the app did not met the guidelines they will reject it by stating the errors, there are certain review guidelines that they follow to review the app, make sure you follow them or check before the submission.&lt;/p&gt;
 
@@ -315,7 +311,7 @@ Having implemented the multicast functionality for various protocols in ONE simu
    <link href="http://localhost:4000/2014/12/28/alphanumeric-shellcode-generator/"/>
    <updated>2014-12-28T00:00:00-05:00</updated>
    <id>http://localhost:4000/2014/12/28/alphanumeric-shellcode-generator</id>
-   <content type="html">&lt;p&gt;A common and important class of attack on computer systems is the code injection attack. This attack has two phases: a) injection of code (a.k.a. the shellcode), and b) execution of the injected code. Typically, code is injected in placeholders for data. So, while the target program expects data, the attacker instead sends code (disguised as data). The attacker then redirects the program execution to the injected code. To do this, the attacker can exploit program vulnerabilities such as buffer overflows. &lt;/p&gt;
+   <content type="html">&lt;p&gt;A common and important class of attack on computer systems is the code injection attack. This attack has two phases: a) injection of code (a.k.a. the shellcode), and b) execution of the injected code. Typically, code is injected in placeholders for data. So, while the target program expects data, the attacker instead sends code (disguised as data). The attacker then redirects the program execution to the injected code. To do this, the attacker can exploit program vulnerabilities such as buffer overflows.&lt;/p&gt;
 
 &lt;p&gt;The ASCII ranges 0x30−0x39 (0-9), 0x41−0x5a (A-Z) and 0x61−0x7a (a-z) form the alphanumeric character set. Shellcodes typically consist of bytes that are not alphanumeric. To counter shellcode injection, we can inspect each byte of the incoming data and discard any byte that is not an alphanumeric character. Such filtering does not provide adequate protection, as it is feasi- ble to construct shellcodes that consis t of only alphanumeric bytes. However, constructing alphanumeric shellcodes by hand is a non-trivial and tedious task. Rix [2] developed a tool to automate the conversion of non-alphanumeric shellcode into alphanumeric shellcode for the x86 architecture. His tool encodes the non-alphanumeric bytes into alphanumeric bytes and further embeds instructions within the output shellcode, whose purpose is to decode (or recover) the original bytes at runtime. Rix uses the XOR instruction (which is alphanumeric for many combinations of operands on x86) to recover the non-alphanumeric bytes of the shellcode. The XOR instructions use specific hardcoded constants for each non-alphanumeric byte that is encoded. The most important drawback of Rix’s approach is that every non-alphanumeric byte of the original shellcode requires separate instructions to be embedded in the modified shellcode. This increases the size of the modified shellcode, which typically is over 4 times the size of the original shellcode.&lt;/p&gt;
 
@@ -327,6 +323,7 @@ passwd), exposea port, and so on. Such shellcodes have alphanumeric characters l
 &lt;p&gt;In the Non-Alpha Touch scheme, a fixed alphanumeric byte (called the alpha mark ) is inserted before every non-alphanumeric byte in the original shellcode. Each non-alphanumeric byte is replaced with two corresponding alphanumeric bytes, which represent the encoded form of the non-alphanumeric byte. At runtime, the decoding loop uses the alpha mark to determine the portions of the shellcode which need to be decoded. This scheme uses three bytes to encode each non-alphanumeric byte in the original shellcode.&lt;/p&gt;
 
 &lt;p&gt;In the Alpha Freedom scheme, we add a tweak to the encoding scheme, which allows the decoding loop to determine the need for decoding without the alpha mark . This helps further reduce the number of encoding bytes to two for every non-alphanumeric byte in the original shellcode. This is done by constricting the range of allowed alphanumeric values that can be used in the encoded shellcode.&lt;/p&gt;
+
 </content>
  </entry>
  
