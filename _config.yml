@@ -12,6 +12,8 @@ description:      'A Computer Science Enthusiast, love to learn new technologies
 url:              http://localhost:4000/
 baseurl:          /
 
+# Google Analytics
+google_analytics: UA-96164344-1
 
 author:
   name:           'Nagendra Posani'
