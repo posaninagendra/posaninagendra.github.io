@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Versions of Web Views in iOS
+title: Web Views in iOS
 ---
 
 The two different class of web views that are supported in iOS are WKWebView and UIWebView. There are obvious fundamental differences between these two classes that eases the decision-making process. 
