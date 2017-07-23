@@ -4,7 +4,7 @@
  <title>Nagendra Posani</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <link href="http://localhost:4000/"/>
- <updated>2017-03-25T22:58:16-04:00</updated>
+ <updated>2017-07-23T10:55:22-04:00</updated>
  <id>http://localhost:4000</id>
  <author>
    <name>Nagendra Posani</name>
@@ -13,17 +13,712 @@
 
  
  <entry>
+   <title>The AAs of security, Authentication & Authorization</title>
+   <link href="http://localhost:4000/2017/07/18/modern-authentication/"/>
+   <updated>2017-07-18T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/07/18/modern-authentication</id>
+   <content type="html">&lt;p&gt;Authentication and Authorization are the two fundamentals of security that we are dealing today. With rapid increase of the usage of computers, cell phones and other smart devices like tablets, smart watches and other IoT devices, applications authenticating its users on various devices has become a crucial problem. Also, now-a-days many companies are coming up with multiple related yet independent software products and authenticating their users on each of these applications and granting authorization access to the resources has become a challenging problem.&lt;/p&gt;
+
+&lt;p&gt;A best solution to the above mentioned problems is by implementing Single Sign On (SSO) standards. SSO is an access control mechanism that lets the users to authenticate and grant permissions to access the resources that they own. With this standard user logs in to the system with single user id and password to access all the connected systems.&lt;/p&gt;
+
+&lt;p&gt;There are different ways by which one can go about to implement this mechanism, the popular protocols that define this standards are given below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Security Assertion Markup Language (SAML)&lt;/li&gt;
+  &lt;li&gt;OpenID&lt;/li&gt;
+  &lt;li&gt;OAuth&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These above mentioned protocols have few overlapped mechanisms, but they all are different, it is often confusing to know what each protocol does. I try to explain this in this article.&lt;/p&gt;
+
+&lt;p&gt;The one liner definition of each of these protocols are given below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SAML: Single Sign On for enterprise users.&lt;/li&gt;
+  &lt;li&gt;OpenID: Single Sign On for consumer users.&lt;/li&gt;
+  &lt;li&gt;OAuth: Authorization between applications.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;authentication-single-sign-on&quot;&gt;Authentication: Single Sign On&lt;/h2&gt;
+
+&lt;p&gt;As we know that the increasing trend of having multiple related yet independent software products
+demands the use of Single Sign On standards. A good example to see why this is so important is, consider Google, they have a lot of related software products like Gmail, Google Docs, Google Photos, Google Drive etc. If they had planned to use individual user records for each of their products, they will face number of problems to start with, it is a bad user experience to prompt user to authenticate to use the products after logging in to one of the products and say if you are an employee of the company and you get privileged access to all these products and when you leave the company they have to delete your user record in each of these products.&lt;/p&gt;
+
+&lt;p&gt;Instead Single Sign On proposes a centralized user record management and one time user authentication to access across the applications. The prime benefits of this standard is given below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Mitigate risk for access to 3rd-party sites (user passwords not stored or managed externally)&lt;/li&gt;
+  &lt;li&gt;Reduce password fatigue from different user name and password combinations&lt;/li&gt;
+  &lt;li&gt;Reduce time spent re-entering passwords for the same identity&lt;/li&gt;
+  &lt;li&gt;Reduce IT costs due to lower number of IT help desk calls about passwords&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are two popular protocols that implements the SSO, 1. SAML and 2. OpenID.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Security Assertion Markup Language (SAML)&lt;/strong&gt; encompasses profiles, bindings and constructs to achieve the following.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Single Sign On&lt;/li&gt;
+  &lt;li&gt;Identity management&lt;/li&gt;
+  &lt;li&gt;Federation&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Some key specifications of SAML are given below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;SAML is an XML based, open-standard data formatted exchange of authentication and authorization between parties.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;It started in 2001 and got continuously updated to the latest standards. The latest version SAML 2.0 is released in 2005.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A SAML protocol describes how certain SAML elements (including assertions) are packaged within SAML request and response elements, and gives the processing rules that SAML entities must follow when producing or consuming these elements.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A SAML &lt;em&gt;binding&lt;/em&gt; is a mapping of a SAML protocol message onto standard messaging formats and/or communications protocols. There is a brand new binding specification in SAML 2.0 that defines the following standalone bindings:
+    &lt;ul&gt;
+      &lt;li&gt;SAML SOAP Binding (based on SOAP 1.1)&lt;/li&gt;
+      &lt;li&gt;Reverse SOAP (PAOS) Binding&lt;/li&gt;
+      &lt;li&gt;HTTP Redirect (GET) Binding&lt;/li&gt;
+      &lt;li&gt;HTTP POST Binding&lt;/li&gt;
+      &lt;li&gt;HTTP Artifact Binding&lt;/li&gt;
+      &lt;li&gt;SAML URI Binding&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;A SAML &lt;em&gt;profile&lt;/em&gt; describes in detail how SAML assertions, protocols, and bindings combine to support a defined use case.
+    &lt;ul&gt;
+      &lt;li&gt;Web Browser SSO Profile&lt;/li&gt;
+      &lt;li&gt;Enhanced Client or Proxy (ECP) Profile&lt;/li&gt;
+      &lt;li&gt;Identity Provider Discovery Profile&lt;/li&gt;
+      &lt;li&gt;Single Logout Profile&lt;/li&gt;
+      &lt;li&gt;Name Identifier Management Profile&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SAML mandates XML Signature and XML Encryption to enforce data integrity and confidentiality.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/authentication/saml.png&quot; alt=&quot;img1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Web Browser SSO use case is shown in the image above. As we have seen, SAML defines three roles.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Identity Provider (IDP): This role will validate the identity of the user who asks for the service&lt;/li&gt;
+  &lt;li&gt;Service Provider (SP): This role provide the service to the user&lt;/li&gt;
+  &lt;li&gt;Principle: The is typically a user asking for service from SP and getting validated by IDP.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;OpenID&lt;/strong&gt; is an open standard and decentralized authentication protocol. The OpenID standard provides a framework for the communication that must take place between the identity provider and the OpenID acceptor (the relying party). This standard is seen as Single Sign On for consumers.&lt;/p&gt;
+
+&lt;p&gt;In the above scenario, we discussed Single Sign On for enterprise, where a company has multiple software products and to authenticate the users they maintain just one user record and a centralized authentication mechanism to authenticate and authorize. Whereas OpenID standard is seen in users perspective, where a user has accounts in multiple unrelated software applications like Google Photos, Dropbox, Facebook, Twitter etc and to get validated by these applications the user have to authenticate on corresponding systems by remembering multiple user ids and passwords, instead, openid protocol provides a way to the user to create just one account with openid and use it as authentication credential with the list of acceptors, the acceptor third party system validates this record with openid and grants access to the resource.&lt;/p&gt;
+
+&lt;p&gt;The term OpenID may also refer to an identifier as specified in the OpenID standard; these identifiers take the form of a unique Uniform Resource Identifier (URI), and are managed by some ‘OpenID provider’ that handles authentication.&lt;/p&gt;
+
+&lt;p&gt;A list of OpenID acceptors are AOL, Blogger, Flickr, France Telecom, Google, Amazon.com, Canonical (provider name Ubuntu One), LiveJournal, Microsoft (provider name Microsoft account), Mixi, Myspace, Novell, Orange, Sears, Sun, Telecom Italia, Universal Music Group, VeriSign, WordPress, Yahoo!, the BBC, IBM, PayPal, and Steam.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SAML vs OpenID&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Some of the features that distinguished SAML vs OpenID&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Feature&lt;/th&gt;
+      &lt;th&gt;OpenId&lt;/th&gt;
+      &lt;th&gt;SAML&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Service provider-initiated SSO&lt;/td&gt;
+      &lt;td&gt;Yes&lt;/td&gt;
+      &lt;td&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Identity provider-initiated SSO&lt;/td&gt;
+      &lt;td&gt;No&lt;/td&gt;
+      &lt;td&gt;Yes&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Identity provider discovery&lt;/td&gt;
+      &lt;td&gt;Configured per user&lt;/td&gt;
+      &lt;td&gt;Configured per account&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Just-in-time provisioning&lt;/td&gt;
+      &lt;td&gt;Via back-channel SReg request&lt;/td&gt;
+      &lt;td&gt;Directly, in the same user SSO request&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Performance&lt;/td&gt;
+      &lt;td&gt;Slower&lt;/td&gt;
+      &lt;td&gt;Faster&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Audience&lt;/td&gt;
+      &lt;td&gt;Consumer&lt;/td&gt;
+      &lt;td&gt;Enterprise&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;authorization&quot;&gt;Authorization&lt;/h2&gt;
+
+&lt;p&gt;OAuth is an open standard authorization protocol where users grant access to websites or applications to their information on other websites instead of passing user credentials like username and password. This mechanism is used by many companies like Google, Facebook, Twitter, to share their profile information to many third party websites or applications.&lt;/p&gt;
+
+&lt;p&gt;OAuth is complementary to and distinct from OpenID, as here it just deals about authorization. It simply delegates the access to other websites which posses the user information.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Core Data Explained</title>
+   <link href="http://localhost:4000/2017/06/19/core-data/"/>
+   <updated>2017-06-19T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/06/19/core-data</id>
+   <content type="html">&lt;p&gt;Core data is one of the most misunderstood frameworks in iOS. If one understands the individual components of the framework and its usage, it is one of the easy to use frameworks. Lets go through the individual components to get an overview of this framework and see its usage through swift code snippets and throw away the frustration.&lt;/p&gt;
+
+&lt;p&gt;Core data framework is a model layer and persistent technology. It helps you build the model layer that represents the state of your application and perform store and retrieve operations of data through objects persistently. It is not just a SQL Wrapper, it is much more than that, the most powerful feature of core data is its object graph management and it provides higher level of abstraction of the database.&lt;/p&gt;
+
+&lt;p&gt;The main principle behind this framework is letting the app to store its data in the form of objects directly in to the database tables. It provides APIs which implements heavy operations like save, delete and fetch optimally.&lt;/p&gt;
+
+&lt;p&gt;The Core data stack consists of four components as listed below.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Managed Object Context&lt;/li&gt;
+  &lt;li&gt;Persistent Store Coordinator&lt;/li&gt;
+  &lt;li&gt;Persistent Store&lt;/li&gt;
+  &lt;li&gt;SQLite Store&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;All the components are inter linked and yet they are flexible to use. Lets go through each component.&lt;/p&gt;
+
+&lt;h3 id=&quot;managed-object-context&quot;&gt;Managed Object Context&lt;/h3&gt;
+
+&lt;p&gt;This component is the only component with which the app communicates. Consider this component as a scratch pad where you can write and read the objects and after all the changes made, you can save them to the store. Technically an application can have more than one context and each context can have any number of objects, the object knows in which context it is in and the context knows all its objects.&lt;/p&gt;
+
+&lt;p&gt;The object graph management is maintained in this component. Since it is in direct connection to the app, which creates the objects and saves them to the context and the context maintains the graph of these objects until they are saved in the store. For example, if we have an application with entities like student, faculty and department and corresponding tables in the database with established relationships. When you create a student object with a relation to department, Managed Object Context understands this and maintains the relationships and in future if you update any of the relationships it updates the graph accordingly, it is the same case with fetched objects from store.&lt;/p&gt;
+
+&lt;h3 id=&quot;persistent-store-coordinator&quot;&gt;Persistent Store Coordinator&lt;/h3&gt;
+
+&lt;p&gt;As the name suggests this component coordinates the contexts and stores to which they are connected. It is like a central scrutinizer which connects the contexts and stores. Technically you can have many number of stores and contexts, so this component connects a particular context to a store. It ties the object management part and persistent storage part of this framework.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/core-data/psc.png&quot; alt=&quot;img1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In earlier versions of iOS, before iOS 10, to use core data we had to create the complete stack from the persistent store coordinator to a store and context. But from iOS 10 the APIs are made easy to create the Core Data stack.&lt;/p&gt;
+
+&lt;h3 id=&quot;persistent-store&quot;&gt;Persistent Store&lt;/h3&gt;
+&lt;p&gt;This is the part of the stack where persistency happens. The persistent store gives the abstraction of actual database and it provides wrapper methods to the requests. Behind the scenes it creates SQL statements to the requests that it receives and stores them in the file system.&lt;/p&gt;
+
+&lt;p&gt;In case if you want to customize the store to use your own database rather than using standard SQLite store, you can achieve that by subclassing the &lt;code class=&quot;highlighter-rouge&quot;&gt;NSIncrementalStore&lt;/code&gt; which is an abstract class to implement your own storage.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-these-components-work-together&quot;&gt;How these components work together?&lt;/h2&gt;
+
+&lt;p&gt;Before I explain how they work together, let me introduce to the nomenclature used by Apple in Core Data framework and its contextual meaning.&lt;/p&gt;
+
+&lt;p&gt;Swift is slowly getting rid of the NS prefix to its APIs but it didn’t reach to the Core Data yet so as of today we still have NS prefix in Core Data. We are already familiar with Managed Object Context, Persistent Store Coordinator and Persistent Store, they are called &lt;code class=&quot;highlighter-rouge&quot;&gt;NSManagedObjectContext&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentStoreCoordinator&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentStore&lt;/code&gt; respectively. Apart from them we have few more components as we dive deep in to the framework like, Managed Object Model (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSManagedObjectModel&lt;/code&gt;), Entity Description (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSEntityDescription&lt;/code&gt;), Fetch Request (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSFetchRequest&lt;/code&gt;), Mapping Model (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMappingModel&lt;/code&gt;), Migration Manager (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMigrationManager&lt;/code&gt;) etc.&lt;/p&gt;
+
+&lt;p&gt;Managed Object Model is simply a model that has the information of all the entity schemas, a store coordinator is created using this model, letting it know that what kind of objects it would see. You can have different versions of this models, as your app grows you might want to update the tables (or entities) by adding/deleting properties or adding new entities etc, in all these cases you will be creating a new version of this model.&lt;/p&gt;
+
+&lt;p&gt;Entity Description is associated to a specific entity and is represented as the entries of the persistent store. It also ties the entity object to the context in which it is going to be written, along with that it has other information related to entity management.&lt;/p&gt;
+
+&lt;p&gt;Fetch request is the abstraction of database queries to retrieve data. You can create general fetch request of all the objects of a specific entity or be more specific and define the filters on attributes like SQLite queries by adding predicate (&lt;code class=&quot;highlighter-rouge&quot;&gt;NSPredicate&lt;/code&gt;) to the request.&lt;/p&gt;
+
+&lt;p&gt;Mapping model and migration manager are handy components when you are dealing with migration of schema and data in the database. Mapping model explicitly defines the mapping from old schema to the new schema to ease the migration process. This is consumed by the migration manager which performs the actual migration.
+570 × 1182
+See the flow diagram give below to understand the Core Data stack.&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+&lt;img src=&quot;/assets/core-data/cdstack.png&quot; height=&quot;625&quot; width=&quot;300&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;To explain the work flow, lets consider an example, we are building a Winestore and it has entities like wine, winery and region. Lets create these entities in core data model file, the framework provides a UI interface to create the entities and define the relationships between them. Managed object model is a &lt;code class=&quot;highlighter-rouge&quot;&gt;.mom&lt;/code&gt; file that is created by this data model that we created, can be referred as file-manager path URL by the persistent store coordinator.&lt;/p&gt;
+
+&lt;p&gt;Once we have entities created, we want the app to create few records or consume them, for this we need a context to write and read, lets go ahead and create a context. To define the context we need a store coordinator to connect with and to create the store coordinator we need managed object model because the store coordinator should know what objects it is talking with.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// First get the model URL, for that look for .mom&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// file in the directory with the resource name as the name of your .xcdatamodel&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;modelPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;forResource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;mom&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;modelUrl&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;fileURLWithPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modelPath&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create the model and persistent store coordinator&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSManagedObjectModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;contentsOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;modelUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;coordinator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPersistentStoreCoordinator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;managedObjectModel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Create context and link it to the store coordinator&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSManagedObjectContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;concurrencyType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mainQueueConcurrencyType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;persistentStoreCoordinator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coordinator&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Wondering why we haven’t created the persistent store explicitly? Well, it is done silently by Persistent Store Coordinator, by default it creates &lt;code class=&quot;highlighter-rouge&quot;&gt;NSSQLiteStore&lt;/code&gt; but in case if you want to create your own store in place of the default behavior you can do that as given below.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;NSPersistentStoreCoordinator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;registerStoreClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;CustomStoreClass&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+ &lt;span class=&quot;nv&quot;&gt;forStoreType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CustomStoreType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coordinator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addPersistentStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ofType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;CustomStoreType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;configurationName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;at&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storeUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storeOptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To define your own store you need to subclass &lt;code class=&quot;highlighter-rouge&quot;&gt;NSIncrementalStore&lt;/code&gt; and implement the persistent store protocol methods and register it to the store coordinator to link to this new store instead of the default store.&lt;/p&gt;
+
+&lt;p&gt;Once we have the context, we can add objects, fetch and delete. Some of the operations are give below.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Save&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;wine&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Wine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;entity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wineEntity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;insertInto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wineId&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12562&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wine Pro&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wineDescription&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wine Pro&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Oldest wines&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;year&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1970&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Fetch&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;wineFetch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSFetchRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Wine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;entityName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wine&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;wineFetch&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predicate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPredicate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;wineDescription BEGINSWITH[cd] %@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Wine&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;wineCount&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wineFetch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;From iOS 10+ creating core data stack made very simple, Apple added another layer of abstraction to handle the stack creation in the class &lt;code class=&quot;highlighter-rouge&quot;&gt;NSPersistentContrainer&lt;/code&gt; which creates the stack and using the object of this class you can access the context through its parameters and perform the operations.&lt;/p&gt;
+
+&lt;div class=&quot;language-swift highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;kd&quot;&gt;lazy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;persistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPersistentContainer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;cm&quot;&gt;/*
+       The persistent container for the application. This implementation
+       creates and returns a container, having loaded the store for the
+       application to it. This property is optional since there are legitimate
+       error conditions that could cause the creation of the store to fail.
+      */&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;container&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSPersistentContainer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;ToDO_App&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;loadPersistentStores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;completionHandler&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;storeDescription&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// Replace this implementation with code to handle the error appropriately.&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.&lt;/span&gt;
+
+              &lt;span class=&quot;cm&quot;&gt;/*
+               Typical reasons for an error here include:
+               * The parent directory does not exist, cannot be created, or disallows writing.
+               * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+               * The device is out of space.
+               * The store could not be migrated to the current model version.
+               Check the error message to determine what the actual problem was.
+               */&lt;/span&gt;
+              &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unresolved error &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;container&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}()&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;saveContext&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;context&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;persistentContainer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewContext&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hasChanges&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// Replace this implementation with code to handle the error appropriately.&lt;/span&gt;
+              &lt;span class=&quot;c1&quot;&gt;// fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.&lt;/span&gt;
+              &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;nserror&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;NSError&lt;/span&gt;
+              &lt;span class=&quot;nf&quot;&gt;fatalError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unresolved error &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nserror&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nserror&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;userInfo&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Some of the good articles that I referred while I was working on core data are given below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.objc.io/issues/4-core-data/&quot;&gt;Objc.io Core data articles&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.raywenderlich.com/145809/getting-started-core-data-tutorial&quot;&gt;Raywenderlich Article on Core data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/index.html&quot;&gt;Apple documentation of Core data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Web Views in iOS</title>
+   <link href="http://localhost:4000/2017/06/02/wkwebview-uiwebview/"/>
+   <updated>2017-06-02T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/06/02/wkwebview-uiwebview</id>
+   <content type="html">&lt;p&gt;The two different class of web views that are supported in iOS are WKWebView and UIWebView. There are obvious fundamental differences between these two classes that eases the decision-making process.&lt;/p&gt;
+
+&lt;p&gt;In WWDC 2014, Apple introduced WebKit with a brand new WKWebView as a better version of the existing web view (i.e. UIWebView) in the UIKit. It is well known that UIWebView suffers from some major issues like the memory leak, and can throttle the application that heavily dependent on web views. As a fix to many such issues, Apple released the new &lt;a href=&quot;https://developer.apple.com/documentation/webkit&quot;&gt;WebKit&lt;/a&gt; with many new features majority of them are improvements in performance and user experience. Apple recommends to use WKWebView in the applications that plan to heavily consume them, but it is good to know the what are the pros and cons of this new framework.&lt;/p&gt;
+
+&lt;h2 id=&quot;wkwebview-how-different-from-uiwebview&quot;&gt;WKWebView: How different from UIWebView?&lt;/h2&gt;
+
+&lt;p&gt;The list of differences is given below.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-pros&quot;&gt;The Pros&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Runs outside of the app’s main process&lt;/li&gt;
+  &lt;li&gt;Uses Nitro, a faster JavaScript engine&lt;/li&gt;
+  &lt;li&gt;Supports server-side authentication challenges&lt;/li&gt;
+  &lt;li&gt;Supports authenticating self-signed security certificates &amp;amp; certificates with errors&lt;/li&gt;
+  &lt;li&gt;Handles JavaScript asynchronously&lt;/li&gt;
+  &lt;li&gt;Eliminates certain touch delays&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-cons&quot;&gt;The Cons&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Requires iOS 8 or later&lt;/li&gt;
+  &lt;li&gt;Does not support AJAX requests to locally-stored files&lt;/li&gt;
+  &lt;li&gt;Does not support ‘Accept Cookies’ setting&lt;/li&gt;
+  &lt;li&gt;Does not support ‘Advanced Cache Settings’&lt;/li&gt;
+  &lt;li&gt;HTML5 local storage clears when app is exited&lt;/li&gt;
+  &lt;li&gt;Does not support logging of WebKit requests&lt;/li&gt;
+  &lt;li&gt;May not capture screenshots as expected&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A brief description of these differences:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Runs outside of the app’s main process&lt;/strong&gt;: This is probably the biggest performance boost to the apps that heavily depend on web views. Running a web view in the app consumes a significant amount of memory and processing power for rendering the web pages. In worst case, the app might even crash because it has reached maximum memory limit. In order to escalate this, you can switch from UIWebView to WKWebView. Apple solves this problem by launching a new process for web view and it consumes all the resources outside of your app, the downside of this alternative is you might not be able to intercept and modify the requests to a proxy server, whereas in UIWebView you can pretty much do anything related to the requests.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Uses Nitro, a faster JavaScript engine&lt;/strong&gt;: Since WKWebView is launched as a new process Apple replaced the default javascript engine with Nitro, an advanced javascript engine as it doesn’t effect apps resources and the apps can also leverage this for better user experience.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Supports server-side authentication challenges&lt;/strong&gt;: It supports server side authentication challenges and cookie storage.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Supports authenticating self-signed security certificates &amp;amp; certificates with errors&lt;/strong&gt;: It supports self-signed security certificates and in the case of errors you can still be able to load the web page (this feature is added to Swift 3).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Handles JavaScript asynchronously&lt;/strong&gt;: As most of the modern web pages make server requests to render the data, WKWebView handles them asynchronously.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Eliminates certain touch delays&lt;/strong&gt;: UIWebView doesn’t handle the touch gestures smoothly, WKWebView has better optimizations to handle them seamlessly.&lt;/p&gt;
+
+&lt;p&gt;Apple recommends WKWebView over UIWebView so that apps can leverage the memory and process optimizations, but it depends on what you want to solve, to handle the server requests better one might prefer to use UIWebView, but in general WKWebView is the best.&lt;/p&gt;
+
+&lt;p&gt;Here is a good article that describes the intricacies of the &lt;a href=&quot;https://github.com/ShingoFukuyama/WKWebViewTips&quot;&gt;WKWebView&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>A review of Cryptography</title>
+   <link href="http://localhost:4000/2017/05/12/review-of-cryptography/"/>
+   <updated>2017-05-12T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/05/12/review-of-cryptography</id>
+   <content type="html">&lt;p&gt;I’m writing this post partly for my comfort to quickly browse through the algorithms and protocols of Cryptography. I have taken many courses on Cryptography both in my undergrad and Masters. Having done many courses I get the rational of the protocols and its design but one does not have to memorize any protocol or algorithm instead one can construct then and there if required but it is always good to have a reference, more like a cheat sheet.&lt;/p&gt;
+
+&lt;p&gt;The epicenter of cryptography is security. Security is about how to prevent attacks or if prevention is not possible, then how to detect and recover from them. In this context, an attack is a delibarate attempt to compromise a system. It usually exploits weakness of the system’s design, implementation, operation and management. Attacks can be passive or active.&lt;/p&gt;
+
+&lt;p&gt;Passive Attacks:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Attacks can learn or make use of information from the system but does not affect the system resources.&lt;/li&gt;
+  &lt;li&gt;Examples: Evasdropping message contents, traffic analysis&lt;/li&gt;
+  &lt;li&gt;Difficult to detect and should be prevented.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Active Attacks:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Attempts to alter system resources or affect their operations&lt;/li&gt;
+  &lt;li&gt;Examples: Spoofing, replay, modification(substitution, insertion, destruction), denial of service.&lt;/li&gt;
+  &lt;li&gt;Difficult to prevent and should be detected.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The main services of security that helps us detect and/or prevent such attacks are as follows.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Authentication
+    &lt;ul&gt;
+      &lt;li&gt;Aims to detect masquerade&lt;/li&gt;
+      &lt;li&gt;Provides assurance that the communicating entity is the one that it claims to be&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Authorization
+    &lt;ul&gt;
+      &lt;li&gt;Aims to prevent unauthorized access to resources&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Confidentiality
+    &lt;ul&gt;
+      &lt;li&gt;Aims to protect data from unauthorized discolsure&lt;/li&gt;
+      &lt;li&gt;Based on encryption&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Integrity
+    &lt;ul&gt;
+      &lt;li&gt;Aims to detect the modification and replay&lt;/li&gt;
+      &lt;li&gt;Provides the assurance that the message received is excatly as sent by the sender&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Non-Repudiation
+    &lt;ul&gt;
+      &lt;li&gt;Provides protection of the denial by one entity involved in a communcation of having participated in all or part of the communication&lt;/li&gt;
+      &lt;li&gt;Two types (i) Non-repudiation of origin, (ii) Non-repudiation of delivery&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The primary concern of many applications/systems are to provide security to their users/customers and based on the utility of the application/system one can provide all or few of these services.&lt;/p&gt;
+
+&lt;p&gt;The standard Cryptography mechanisms that help us build these services are given below.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Encryption
+    &lt;ul&gt;
+      &lt;li&gt;Two basic types based on the key sharing techniques, Symmetric Key Encryption and Asymmetic (Public) Key Encryption.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Authentication Protocols
+    &lt;ul&gt;
+      &lt;li&gt;Password based, Cryptographic challenge-response protocols, biometrics etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Authorization Schemes
+    &lt;ul&gt;
+      &lt;li&gt;Access Control Lists (ACLs), Capabilities, Security Labels etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Integrity Mecahnisms
+    &lt;ul&gt;
+      &lt;li&gt;Message Authentication Codes (MACs), Sequence numbering, time stamping, cryptography chaining etc.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Digital Signatures
+    &lt;ul&gt;
+      &lt;li&gt;Based on Authentication, Non-repudiation and Integrity&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this article, I’m justing briefing but if you want to understand the indepth of the algorithms or protocols, please refer the “want to know more” links in each section. I provided a hyperlink of some of the best online resources that I refered to understand them and it will help you to dive into the topic.&lt;/p&gt;
+
+&lt;h3 id=&quot;encryption&quot;&gt;Encryption&lt;/h3&gt;
+&lt;p&gt;The main objective is to provide confidentiality through authorization. In simple terms, it is a technique to protect the message by encoding it and can only be decoded if authorized. The goal of adversary is to systematicaly recover the plaintexts from ciphertexts and to deduce the key. The best way to go about it is by implementing the cryptosystem based on the Kerckhoff’s principle.&lt;/p&gt;
+
+&lt;p&gt;Kirckhoff’s Pricinple:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;One must assume that the adversary knows all the details of Encryption and Decryption&lt;/li&gt;
+  &lt;li&gt;Security of the system should be based on the protection of the decryption key&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now let us see, the types of adversary models to break the system.&lt;/p&gt;
+
+&lt;h4 id=&quot;adversary-models&quot;&gt;Adversary Models&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Ciphertext-only Attack
+    &lt;ul&gt;
+      &lt;li&gt;The adversary can only observe ciphertexts produced by the same encryption key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Known-plaintext Attack
+    &lt;ul&gt;
+      &lt;li&gt;The adversary can obtain corresponding plaintext-ciphertext pairs produced with the same encryption key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Chosen Plaintext Attack
+    &lt;ul&gt;
+      &lt;li&gt;The adversary can choose the plaintexts and can get the corresponding ciphertexts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Chosen Ciphertext Attach
+    &lt;ul&gt;
+      &lt;li&gt;The adversary can choose the ciphertexts and can get the corresponding plaintexts&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Related-key Attack
+    &lt;ul&gt;
+      &lt;li&gt;The adversary can obtain ciphertexts, or plaintext-ciphertext pairs that are produced with different encryption keys that are related in a known way to a specific encryption key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;An encryption model is secure in a given adversary model if it is comupationally infeasible to determine the decryption key under the assumptions given in the model. Many encryption schemes used in practice have no-proof of security but these schemes are used because of its efficiency and resistance to all known attacks. Some encryption schemes are provable secure but they are often inefficient.&lt;/p&gt;
+
+&lt;p&gt;P.S: &lt;a href=&quot;https://blog.cryptographyengineering.com/2013/01/25/in-defense-of-provable-security/&quot;&gt;Want to know more?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;classic-encryption-schemes&quot;&gt;Classic Encryption Schemes&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Symmetric Encryption
+    &lt;ul&gt;
+      &lt;li&gt;Encryption is based on a shared key (K), or can be constructed from a session key (K’)&lt;/li&gt;
+      &lt;li&gt;Two main types:
+        &lt;ul&gt;
+          &lt;li&gt;Stream Ciphers: Operate on individual characters of the plaintext&lt;/li&gt;
+          &lt;li&gt;Block Ciphers: Process the operation in larger blocks of characters.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Asymmetric Encryption
+    &lt;ul&gt;
+      &lt;li&gt;It is hard to computer the secret (private) key from public key&lt;/li&gt;
+      &lt;li&gt;Known as Public Key Encryption&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;block-ciphers&quot;&gt;Block Ciphers&lt;/h4&gt;
+&lt;p&gt;One way to encrypt a very long plaintext message is by dividing it into n-bit blocks and every block is encrypted one at a time.&lt;/p&gt;
+
+&lt;h6 id=&quot;design-criteria-of-block-ciphers&quot;&gt;Design Criteria of Block Ciphers&lt;/h6&gt;
+&lt;p&gt;Complex encryption function can be built by composing several simple operations which offer complementary – but individually insufficient – protection. Some of the simple operations are elementary arithmetic operations, logical operations (e.g., XOR), modular multiplication, transpositions etc. Combine two or more transformations in a manner that the resulting cipher is more secure than the individual components. The design principle that need to be followed to ensure the security of the Block Ciphers are as follows.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Completeness
+    &lt;ul&gt;
+      &lt;li&gt;Each bit of the output block should depend on each bit of the input block and on each bit of the key&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Avalanche effect
+    &lt;ul&gt;
+      &lt;li&gt;Changing one bit in the input block should change approximately half of the bits in the output block&lt;/li&gt;
+      &lt;li&gt;Similarly, changing one key bit should result in the change of approximately half of the bits in the output block&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Statistical independence
+    &lt;ul&gt;
+      &lt;li&gt;Input and output should appear to be statistically independent&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Consider m as the plaintext message, k as the secret key, E as the encryption scheme and c as the ciphertext. Let the message be a very long text so we divide the message into equal length blocks, say n, with padding of the last block to adjust the block size. Block cipher is seen as c&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt; = E&lt;sub&gt;&lt;em&gt;k&lt;/em&gt;&lt;/sub&gt;(m&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;) for &lt;em&gt;i&lt;/em&gt; = 1,…,n. The encryption algorithm used in block ciphers are two major standards of algorithms, they are Digital Encryption Standards (DES) and Advanced Encryption Standard (AES).&lt;/p&gt;
+
+&lt;h5 id=&quot;digital-encryption-standard-des&quot;&gt;Digital Encryption Standard (DES)&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;First published in 1977 and used as de-facto standard for backing security&lt;/li&gt;
+  &lt;li&gt;An example of Feistel Cipher&lt;/li&gt;
+  &lt;li&gt;Design criteria kept secret for more than 20 years&lt;/li&gt;
+  &lt;li&gt;Block length is &lt;em&gt;64 bits&lt;/em&gt;, Key length is &lt;em&gt;56 bits&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Number of rounds is 16&lt;/li&gt;
+  &lt;li&gt;Insecure due to small key space, prone to many attacks but can be used as 3-DES with two keys.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Attacks on DES:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Exhaustive key search attacks
+    &lt;ul&gt;
+      &lt;li&gt;Given a small number of plaintext-ciphertext pairs encrypted under same key k, k can be recovered by exhaustive key search with 2 &lt;sup&gt;k-1&lt;/sup&gt; processing power. To prevent this attack, in practice the key size should be at least 128 bits.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Algebraic attacks
+    &lt;ul&gt;
+      &lt;li&gt;Having large key size is a necessary condition for security but not sufficient. It can be easily broken if the internal algebraic structure is weak. For example, to improve security if we implement DES to encrypt twice it doesn’t help, it suffers under &lt;a href=&quot;https://en.wikipedia.org/wiki/Man-in-the-middle_attack&quot;&gt;MITM attack&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;advanced-encryption-standard-aes&quot;&gt;Advanced Encryption Standard (AES)&lt;/h5&gt;
+&lt;ul&gt;
+  &lt;li&gt;First approved in 2001 as &lt;a href=&quot;https://www.nist.gov/publications/advanced-encryption-standard-aes&quot;&gt;FIPS PUB 197&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;It is standardized version of &lt;a href=&quot;http://csrc.nist.gov/archive/aes/rijndael/Rijndael-ammended.pdf&quot;&gt;Rijndael algorithm&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Block length is &lt;em&gt;128 bits&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Key length is &lt;em&gt;128/192/256 bits&lt;/em&gt; (N&lt;sub&gt;b&lt;/sub&gt; x 32 bits, where N&lt;sub&gt;b&lt;/sub&gt; = 4, 6, 8)&lt;/li&gt;
+  &lt;li&gt;Number of rounds is 6 + N&lt;sub&gt;b&lt;/sub&gt; where N&lt;sub&gt;b&lt;/sub&gt; = 4, 6, 8&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;modes-of-encryption&quot;&gt;Modes of Encryption&lt;/h4&gt;
+&lt;p&gt;Soon after DES was made a US Federal standard, another US standard appeared giving four recommended ways of using DES for data encryption. These modes of operation have since been standardised internationally and can be used with any block cipher.&lt;/p&gt;
+
+&lt;h6 id=&quot;electronic-code-book-ecb&quot;&gt;Electronic Code Book (ECB)&lt;/h6&gt;
+&lt;p&gt;Simplest approach to using a block cipher. Plaintext m is divided into t blocks of n bits m&lt;sub&gt;1&lt;/sub&gt;, m&lt;sub&gt;2&lt;/sub&gt;,….,m&lt;sub&gt;t&lt;/sub&gt; (the last block is padded if necessary). Ciphertext blocks c&lt;sub&gt;1&lt;/sub&gt;, c&lt;sub&gt;2&lt;/sub&gt;,….,c&lt;sub&gt;t&lt;/sub&gt; are defined as follows:
+c&lt;sub&gt;i&lt;/sub&gt; = E&lt;sub&gt;k&lt;/sub&gt;(m&lt;sub&gt;i&lt;/sub&gt;).
+&lt;img src=&quot;/assets/review-of-crypto/ecb.png&quot; alt=&quot;img1&quot; /&gt;
+Note that if m&lt;sub&gt;i&lt;/sub&gt; = m&lt;sub&gt;j&lt;/sub&gt; then we have c&lt;sub&gt;i&lt;/sub&gt;, c&lt;sub&gt;j&lt;/sub&gt; thus patterns in plaintext reappear in ciphertext.&lt;/p&gt;
+
+&lt;p&gt;Properties:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Identical plaintext blocks result in identical ciphertext blocks (under the same key)&lt;/li&gt;
+  &lt;li&gt;Blocks are encrypted independently of other blocks, reordering ciphertext blocks result in correspondingly reordered plaintext blocks&lt;/li&gt;
+  &lt;li&gt;Error propagation: one bit error in a ciphertext block affects only the corresponding plaintext block (results in garbage)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not recommended for messages longer than one block, or if keys are reused for more than one block.&lt;/p&gt;
+
+&lt;h6 id=&quot;cipher-block-chaining-cbc&quot;&gt;Cipher Block Chaining (CBC)&lt;/h6&gt;
+&lt;p&gt;Plaintext m is divided into t blocks of n bits m&lt;sub&gt;1&lt;/sub&gt;, m&lt;sub&gt;2&lt;/sub&gt;,….,m&lt;sub&gt;t&lt;/sub&gt; (the last block is padded if necessary).
+Encryption:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;c&lt;sub&gt;1&lt;/sub&gt; = E&lt;sub&gt;k&lt;/sub&gt;(m&lt;sub&gt;1&lt;/sub&gt; XOR IV)&lt;/li&gt;
+  &lt;li&gt;c&lt;sub&gt;i&lt;/sub&gt; = E&lt;sub&gt;k&lt;/sub&gt;(m&lt;sub&gt;i&lt;/sub&gt; XOR c&lt;sub&gt;i-1&lt;/sub&gt;) for i &amp;gt; 1
+&lt;img src=&quot;/assets/review-of-crypto/cbc.png&quot; alt=&quot;img2&quot; /&gt;
+Properties:&lt;/li&gt;
+  &lt;li&gt;Encrypting the same plaintexts under the same key, but different IVs result in different ciphertexts&lt;/li&gt;
+  &lt;li&gt;Ciphertext block c&lt;sub&gt;i&lt;/sub&gt; depends on m&lt;sub&gt;i&lt;/sub&gt; and all preceding plaintext blocks&lt;/li&gt;
+  &lt;li&gt;Error propagation: one bit error in a ciphertext block c&lt;sub&gt;i&lt;/sub&gt; has an effect on the i&lt;sup&gt;th&lt;/sup&gt; and (i+1)&lt;sup&gt;st&lt;/sup&gt; plaintext block&lt;/li&gt;
+  &lt;li&gt;The IV need not be secret, but its integrity should be protected.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;cipher-feed-back-cfb&quot;&gt;Cipher Feed Back (CFB)&lt;/h6&gt;
+&lt;p&gt;This mode enables a block cipher to be used as a stream cipher. In CFB Mode the keystream is generated by Encrypting the
+IV and n bits of ciphertext. 
+&lt;img src=&quot;/assets/review-of-crypto/cfb.png&quot; alt=&quot;img3&quot; /&gt;
+Properties:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Encrypting the same plaintexts under the same key, but different IVs result in different ciphertexts&lt;/li&gt;
+  &lt;li&gt;Ciphertext block c&lt;sub&gt;i&lt;/sub&gt; depends on m&lt;sub&gt;i&lt;/sub&gt; and all preceding plaintext blocks&lt;/li&gt;
+  &lt;li&gt;Error propagation: one bit error in a ciphertext block c&lt;sub&gt;i&lt;/sub&gt; has an effect on the decryption of that and the next n/s ciphertext blocks (the error remains in the shift register for n/s steps)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;output-feed-back-ofb&quot;&gt;Output Feed Back (OFB)&lt;/h6&gt;
+&lt;p&gt;OFB is same CFB that enables a block cipher to be used as a stream cipher. In OFB Mode the keystream is generated by: Encrypting the IV and the output from this encryption.
+&lt;img src=&quot;/assets/review-of-crypto/ofb.png&quot; alt=&quot;img4&quot; /&gt;
+Properties:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A different IV should be used for every new message, otherwise messages will be encrypted with the same key stream&lt;/li&gt;
+  &lt;li&gt;Ciphertext block c&lt;sub&gt;i&lt;/sub&gt; depends on m&lt;sub&gt;i&lt;/sub&gt; only (does not depend on the preceding plaintext blocks)&lt;/li&gt;
+  &lt;li&gt;Error propagation: one bit error in a ciphertext block c&lt;sub&gt;i&lt;/sub&gt; has an effect on the decryption of only that ciphertext block&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&quot;counter-mode-ctr&quot;&gt;Counter Mode (CTR)&lt;/h6&gt;
+&lt;p&gt;Similar to ECB, takes advantages of ECB but not disadvantages. IV used in each block encryption with an increment of counter.
+&lt;img src=&quot;/assets/review-of-crypto/ctr.png&quot; alt=&quot;img5&quot; /&gt;
+Properies:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Cycle length depends on the size of the counter (typically 2&lt;sup&gt;n&lt;/sup&gt;)&lt;/li&gt;
+  &lt;li&gt;The values to be XORed with the plaintext can be pre-computed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note: In CFB, OFB, and CTR mode only the encryption algorithm is used (decryption is not needed), that is why some ciphers (e.g., AES) is optimized for encryption. The OFB and CTR modes essentially make a synchronous stream cipher out of a block cipher, whereas the CFB mode converts a block cipher into a self-synchronizing stream-cipher.&lt;/p&gt;
+
+&lt;p&gt;P.S: &lt;a href=&quot;http://www.computing.dcu.ie/~hamilton/teaching/CA642/notes/Block.pdf&quot;&gt;Want to know more?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;stream-ciphers&quot;&gt;Stream Ciphers&lt;/h4&gt;
+&lt;p&gt;They encrypt individual characters (usually binary digits) of a plaintext message one at a time, using an encryption transformation which varies with time. By contrast, block ciphers simultaneously encrypt groups of characters, stream ciphers are usually faster than block ciphers in hardware (but not necessarily in software). It has limited or no error propagation may be advantageous when transmission errors are probable.&lt;/p&gt;
+
+&lt;h6 id=&quot;one-time-pad&quot;&gt;One-time Pad&lt;/h6&gt;
+&lt;p&gt;It is similary to Vernam cipher(c&lt;sub&gt;i&lt;/sub&gt; = m&lt;sub&gt;i&lt;/sub&gt; XOR k&lt;sub&gt;i&lt;/sub&gt;) where the key stream digits are generated independently and uniformly at random. It is unconditionally secure against a ciphertext-only attack.  More precisely, if
+M, C, and K are random variables respectively denoting the plaintext, ciphertext, and secret key, and if H() denotes the entropy function, then H(M|C) = H(M).  Equivalently, I(M|C) = 0, the quantity can be thought of as the amount of information that C reveals about M i.e., the ciphertext contributes no information about the plaintext.&lt;/p&gt;
+
+&lt;h6 id=&quot;synchronous-stream-ciphers&quot;&gt;Synchronous stream ciphers&lt;/h6&gt;
+&lt;p&gt;The key stream is generated independently of the plaintext and of the ciphertext, needs synchronization between the sender and the receiver. If a character is inserted into or deleted from the ciphertext stream then synchronization is lost and the plaintext cannot be recovered additional techniques must be used to recover from loss of synch. A ciphertext character that is modified during transmission affects only the decryption of that character an attacker can make changes to selected ciphertext characters and know exactly what effect these changes have on the plaintext (if h = XOR)
+&lt;img src=&quot;/assets/review-of-crypto/ss.png&quot; alt=&quot;img6&quot; /&gt;&lt;/p&gt;
+
+&lt;h6 id=&quot;self-synchronizing-stream-ciphers&quot;&gt;Self-synchronizing stream ciphers&lt;/h6&gt;
+&lt;p&gt;The key stream is generated as a function of a fixed number of previous ciphertext characters. Self-synchronizing since the size t of the register is fixed, a lost ciphertext character affects only the decryption of the next t ciphertext characters. Limited error propagation if a ciphertext character is modified, then decryption of the next t ciphertext characters may be incorrect ciphertext characters depend on all previous plaintext characters better diffusion of plaintext statistics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/review-of-crypto/sss.png&quot; alt=&quot;img7&quot; /&gt;
+P.S: &lt;a href=&quot;http://cacr.uwaterloo.ca/hac/about/chap6.pdf&quot;&gt;Want to know more?&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;asymmetricpublic-key-encryption&quot;&gt;Asymmetric(Public) Key Encryption&lt;/h4&gt;
+&lt;p&gt;The definition of encryption in the public-key setting is very similar to the definition in the shared-key setting, but since public keys allow encryption and are known to all principals by assumption, every principal has access to an encryption machine as in the CPA attack model. In shared key encryption we can talk about security of schemes when an adversary has seen the encryption of only one message. But, since adversaries have access to encryption functions by default in the public-key setting, public-key encryption schemes must always be secure under CPA.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>How to write GCC plugin?</title>
+   <link href="http://localhost:4000/2017/05/01/how-to-write-gcc-plugin/"/>
+   <updated>2017-05-01T00:00:00-04:00</updated>
+   <id>http://localhost:4000/2017/05/01/how-to-write-gcc-plugin</id>
+   <content type="html">&lt;p&gt;Out of many problems that we hear in the field of computer science very few problems will excite us for me one such problem is to add a feature to compiler that solves a security problem.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Elastic Search Client Library</title>
    <link href="http://localhost:4000/2017/03/22/elastic-search/"/>
    <updated>2017-03-22T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/03/22/elastic-search</id>
-   <content type="html">&lt;p&gt;When I first heard of &lt;a href=&quot;https://elastic.co&quot;&gt;Elastic Search&lt;/a&gt; from my friend, I imagined it to be an easily scalable search engine from the word elastic. I was fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by &lt;a href=&quot;http://thedudeabides.com/&quot;&gt;Shay Banon&lt;/a&gt;. It provides various features including distributed, multitenant, reliable and scalable.&lt;/p&gt;
+   <content type="html">&lt;p&gt;When I first heard of &lt;a href=&quot;https://elastic.co&quot;&gt;Elastic Search&lt;/a&gt; from my friend, I imagined it to be an easily scalable search engine from the word elastic. I was fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by &lt;a href=&quot;http://thedudeabides.com/&quot;&gt;Shay Banon&lt;/a&gt;. It is a multi-tenant system, reliable and scalable.&lt;/p&gt;
 
-&lt;p&gt;We all use google for searching, when we do a search query we get the results in few fraction of seconds, ever wondered what goes behind the scenes to implement such a robust efficient system? I was intrigued with this idea of making it possible to set up such a powerful search engine to our applications. Imagine that you have a system or an application with huge data and you want to provide search feature to the customers of the application so that they can retrieve the data by searching. As an example lets consider that you have a file storing application where users can store their files and mark each of them as public or private, public files are visible to all the users of the application and private files are visible only to the user.&lt;/p&gt;
+&lt;p&gt;We all use Google for searching, when we do a search query we get the results a few fraction of seconds, ever wondered what goes behind the scenes to implement such a robust and efficient system? I was intrigued by the possibility of setting up such a powerful search engine in our applications. Imagine that you have a system or an application with huge data and you want to provide search feature to the customers of the application so that they can retrieve the data by searching. As an example let’s consider that you have a file storing application where users can store their files and mark each of them as public or private, public files are visible to all the users of the application and private files are visible only to the user.&lt;/p&gt;
 
-&lt;p&gt;Let us now consider you want to provide a search feature to this application so that users can search the documents or full-text search of their files or public files. This problem statement comes with a bunch of other problems like reliability, efficiency, and scalability. Let us see what are these additional problems. The system we’re trying to develop should be resilient to these additional problems inorder to make it robust. It should be reliable, meaning it shouldn’t fail under any circumstances, no single point of failure or system crash etc. It should be efficient, we don’t want the search to take more than few milliseconds to retrieve the results if so no one is going to use the system. Let us imagine that we have implemented the search and now suddenly your application is a huge success and there is a sudden increase in traffic in terms of users. The system should be able to scale to serve the users. Scalability is the primary issue of many applications and services. So, our idea of adding simple search to the application has got so many twists. One way to get away with this problem is to use well-known search engines, Elastic Search is one of them.&lt;/p&gt;
+&lt;p&gt;Now, say you want to provide a search feature to this application so that users can search the documents or full-text search of their files or public files. This problem statement comes with a bunch of other problems like reliability, efficiency, and scalability. Let us see what these additional problems are. The system we’re trying to develop should be resilient to these additional problems in order to make it robust. It should be reliable, meaning it shouldn’t fail under any circumstances, no single point of failure or system crash etc. It should be efficient, we don’t want the search to take more than few milliseconds to retrieve the results if so no one is going to use the system. Let us imagine that we have implemented the search and now suddenly your application is a huge success and there is a sudden increase in traffic in terms of users. The system should be able to scale to serve the users. Scalability is the primary issue of many applications and services. So, our idea of adding simple search to the application has got so many twists. One way to get away with this problem is to use well-known search engines, Elastic Search is one of them.&lt;/p&gt;
 
-&lt;p&gt;Elastic search is a distributed system, the best part of any distributed system is it can be easily extended to provide reliability as there won’t be any single point failures and scalability as we can add more machines to multiple its capabilities. Elastic Search indexes the shards (a horizontal partition of the database), it maintains one or more replicas of shards so that the operations can be performed in any of these shards. It provides &lt;a href=&quot;https://www.elastic.co/blog/found-multi-tenancy&quot;&gt;multi-tenancy&lt;/a&gt; with multi-types by having more than one index or sharing the indexes across the tenants. It provides RESTful and Java APIs (as it is written in Java). The motivation behind the RESTful API is to provide a common interface to use by other programming languages. It is document oriented so no need for upfront schema, the schema can be defined per type for customization of the indexing process. It provides Real-Time search, meaning we can search in, the data that is just added, Elastic Search provides &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html&quot;&gt;Near Real Time Search&lt;/a&gt;, with the development of per-segment search, the delay between indexing a document and making it visible to search is dropped drastically. More importantly, it is an open source project, which introduces to a large developer community.&lt;/p&gt;
+&lt;p&gt;Elastic search is a distributed system, the best part of any distributed system is it can be easily extended to provide reliability as there won’t be any single point failures and is also scalable as we can add more machines to multiple it’s capabilities. Elastic Search indexes the shards (a horizontal partition of the database), it maintains one or more replicas of shards so that the operations can be performed in any of these shards. It provides &lt;a href=&quot;https://www.elastic.co/blog/found-multi-tenancy&quot;&gt;multi-tenancy&lt;/a&gt; with multi-types by having more than one index or sharing the indexes across the tenants. It provides RESTful and Java APIs (as it is written in Java). The motivation behind the RESTful API is to provide a common interface to use by other programming languages. It is document oriented so no need for upfront schema, the schema can be defined per type for customization of the indexing process. It provides Real-Time search, meaning we can search in the data that is just added, Elastic Search provides &lt;a href=&quot;https://www.elastic.co/guide/en/elasticsearch/guide/current/near-real-time.html&quot;&gt;Near Real Time Search&lt;/a&gt;, with the development of per-segment search, the delay between indexing a document and making it visible to search is dropped drastically. More importantly, it is an open source project, which introduces it to a large developer community.&lt;/p&gt;
 
 &lt;p&gt;Coming to what I’m working on, I’m developing the Elastic Search Client Library for iOS, it was the initial idea of my friend &lt;a href=&quot;https://github.com/siddharthlatest&quot;&gt;Siddharth&lt;/a&gt; at &lt;a href=&quot;https://appbase.io&quot;&gt;AppBase&lt;/a&gt; to create client-side libraries. The library essentially creates an object reference to the server for writing, reading, and streaming data using the RESTful APIs of the search engine. AppBase GitHub has already few libraries (&lt;a href=&quot;https://github.com/appbaseio/appbase-js&quot;&gt;JS&lt;/a&gt;, &lt;a href=&quot;https://github.com/appbaseio/appbase-droid&quot;&gt;Android&lt;/a&gt; and &lt;a href=&quot;https://github.com/appbaseio-apps/elasticsearch-swift&quot;&gt;iOS&lt;/a&gt;) that are available. Please take a look at them. Thanks for reading :)&lt;/p&gt;
 </content>
@@ -34,7 +729,9 @@
    <link href="http://localhost:4000/2017/03/22/a-story-of-swift/"/>
    <updated>2017-03-22T00:00:00-04:00</updated>
    <id>http://localhost:4000/2017/03/22/a-story-of-swift</id>
-   <content type="html">&lt;p&gt;I started my career as Software Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza&lt;/a&gt; in January 2015, within few weeks of my joining, I was asked to join the iOS development team. I was too excited to learn something new, a new technology, a new language with my background and liking towards Python, I was expecting my new language would be much more fun to learn and I ended up in learning 30+ years old language with boring syntax. It took some time for me to know the disaster of the language by working on few projects, after writing few thousands of lines of code. I wasn’t alone, there are many who feel the same. One fine day when I was browsing about the best languages to work with I was surprised to see the new language that Apple is developing called ‘Swift’. The first thought in my head was why my mentor hasn’t asked me to learn something new in the community, why are we going backward, not learning the language that comes with more merit than what its predecessor has to provide. This happened in mid-March 2015, the next day I walk into my mentor’s office and asked him why did he betray me (Sorry for being too dramatic, but I was frustrated). The first thing that I heard from him was a negative comment, the language is very immature to adopt, it is not in its stable state and we can’t afford it right now in our projects. Which is a valid point, but I was intrigued with its continuous evolution, how it is changing over the years to be in a better shape and serve well. From then I’m reading every bit of it through blogs, articles etc. Here is a small story about this new language in the block, &lt;em&gt;Swift&lt;/em&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I started my career as Software Developer at &lt;a href=&quot;https://kuliza.com&quot;&gt;Kuliza&lt;/a&gt; in January 2015, within few weeks of my joining, I was asked to join the iOS development team. I was too excited to learn something new, a new technology, a new language. With my background and liking towards Python, I was expecting a new language to be much more fun to learn and I ended up in learning 30+ years old language with boring syntax. It took some time for me to know the disaster of the language by working on a few projects and writing few thousands of lines of code. I wasn’t alone, there were many who felt the same.&lt;/p&gt;
+
+&lt;p&gt;One fine day when I was browsing about the best languages to work with, I was surprised to see the new language that Apple is developing called ‘Swift’. The first thought in my head was why my mentor hadn’t asked me to learn something new in the community, why are we going backward, not learning the language that comes with more merit than its predecessor has to provide. This happened in mid-March 2015, the next day I walked into my mentor’s office and asked him why did he betray me (Sorry for being too dramatic, but I was frustrated). The first thing that I heard from him was a negative comment, the language is too immature to adopt, it is not in its stable state and we can’t afford it right now in our projects. Which was a valid point, but I was intrigued with its continuous evolution, how it is changing over the years to be in a better shape and serve well. From then I have been reading every bit of it through blogs, articles etc. Here is a small story about this new language in the block, Swift.&lt;/p&gt;
 
 &lt;p&gt;When I heard about Swift, One of the parallel thoughts that I had was why would a tech giant company like Apple want to replace their own legacy language Objective-C instead of upgrading it. Creating a new language in 2014 is a big decision to make especially Apple to replace their entire App Development structure, while there are many alternative languages in the community. The principle behind creating this new language is to have a compiled, functional programming language faster, safer and lighter that can easily be adopted. The current alternatives are C++, Java, JavaScript Python, Ruby etc. The performance comparison of simple storing operation of these languages with the swift is as follows.&lt;/p&gt;
 
@@ -49,11 +746,11 @@
 &lt;sub&gt;&lt;sup&gt;&lt;em&gt;&lt;a href=&quot;https://www.quora.com/Why-would-Apple-introduce-new-programming-languages-e-g-Swift-instead-of-embracing-an-existing-one/answer/Glyn-Williams?srid=cSpD&quot;&gt;Source&lt;/a&gt;&lt;/em&gt; &lt;/sup&gt;&lt;/sub&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;None of the alternative languages fit to the requirement but the closest of all are C++ and Java. We know that Java belongs to someone else, needs a virtual machine and garbage collector. Apple already supported C++, to some extent, we can develop apps in C++ but to use Cocoa (Apple’s UI ToolKit) we may have to switch to ObjC as Cocoa is an ObjC framework. Replacing ObjC, a complicated C-based language with another complicated C-based language doesn’t sound progress. The other alternatives Python and Ruby don’t fit the requirements as they are not compiled languages which is one of the objectives to take advantage of compiler technology. And that is how they ended up in creating new language, as we know Apple is famous for taking bold steps. Fundamentally Swift has elements from all these languages which makes it easier to adopt.&lt;/p&gt;
+&lt;p&gt;None of the alternative languages fit to the requirement but the closest of all are C++ and Java. We know that Java belongs to someone else, needs a virtual machine and garbage collector. Apple already supported C++, to some extent, we can develop apps in C++ but to use Cocoa (Apple’s UI ToolKit) we may have to switch to ObjC as Cocoa is an ObjC framework. Replacing ObjC, a complicated C-based language with another complicated C-based language doesn’t sound progress. The other alternatives Python and Ruby don’t fit the requirements as they are not compiled languages which is one of the objectives to take advantage of compiler technology. And that is how they ended up in creating new language, Apple is famous for taking bold steps. Fundamentally Swift has elements from all these languages which makes it easier to adopt.&lt;/p&gt;
 
-&lt;p&gt;Another interesting aspect of Swift is that it is strongly statically typed language. There are two philosophies here, static type and dynamic type languages. Type system assign rules to types like variables, expressions, functions or modules etc to provide a consistent interface between programs and enable compiler optimizations. The process of checking that the parts have been connected in a consistent way is called Type Checking, that can happen statically at compile time or dynamically at runtime. Statically typed languages are faster than dynamically typed languages. Swift is statically typed language, all classes are created during compile-time. Methods cannot be added on-the-fly and all types are known before the run time. Since everything is known beforehand, a compiler can optimize code without any problem. Objective-C, on the other hand, can’t optimize as effectively, because all dynamic languages work slower than static. Here is a good &lt;a href=&quot;https://yalantis.com/blog/is-swift-faster-than-objective-c/&quot;&gt;article&lt;/a&gt; which demonstrates the performance by running few experiments to measure the performance of swift with various operations.&lt;/p&gt;
+&lt;p&gt;Another interesting aspect of Swift is that it is strongly statically typed language. There are two philosophies here, static type and dynamic type languages. Type system assign rules to types like variables, expressions, functions or modules etc to provide a consistent interface between programs and enable compiler optimizations. The process of checking that the parts have been connected in a consistent way is called Type Checking, that can happen statically at compile time or dynamically at runtime. Statically typed languages are faster than dynamically typed languages. Swift is statically typed language, all classes are created during compile-time. Methods cannot be added on-the-fly and all types are known before the run time. Since everything is known beforehand, a compiler can optimize code without any problem. Objective-C, on the other hand, can’t optimize as effectively, because all dynamic languages work slower than static. Here is a good &lt;a href=&quot;https://yalantis.com/blog/is-swift-faster-than-objective-c/&quot;&gt;article&lt;/a&gt; which demonstrates the performance by running few experiments to measure the performance of swift using various operations.&lt;/p&gt;
 
-&lt;p&gt;Coming back to swift’s origin, it was first released in June 2014, from then it continuously changed over the years. The main design objective of Swift is to make it easier to learn and adopt with its syntactic sugar syntax along with other goals. Swift is intended to be more resilient to enormous code (safer) than ObjC and more concise. Swift adds the concept of protocol extensibility, an extensibility system that can be applied to types, structs, and classes. Apple promotes this as a real change in programming paradigms they term “protocol-oriented programming”. Swift initially announced in 2014 WWDC conference underwent an upgrade to Swift 1.2. In 2015 WWDC it is upgraded to Swift 2, later that year in December it is open sourced under Apache License from Swift 2.2 version. In 2016 WWDC Swift 3 was announced with a lot of changes to the API naming conventions along with other changes. In March 2017, less than three years after its official debut, Swift made the top 10 in the monthly &lt;a href=&quot;https://www.tiobe.com/tiobe-index/&quot;&gt;TIOBE index&lt;/a&gt; ranking of popular programming languages.&lt;/p&gt;
+&lt;p&gt;Coming back to swift’s origin, it was first released in June 2014, from then it has continuously changed over the years. The main design objective of Swift is to make it easier to learn and adopt with its syntactic sugar syntax along with other goals. Swift is intended to be more resilient to enormous code (safer) than ObjC and more concise. Swift adds the concept of protocol extensibility, an extensibility system that can be applied to types, structs, and classes. Apple promotes this as a real change in programming paradigms they term “protocol-oriented programming”. Swift initially announced in 2014 WWDC conference underwent an upgrade to Swift 1.2. In 2015 WWDC it is upgraded to Swift 2, later that year in December it is open sourced under Apache License from Swift 2.2 version. In 2016 WWDC Swift 3 was announced with a lot of changes to the API naming conventions along with other changes. In March 2017, less than three years after its official debut, Swift made the top 10 in the monthly &lt;a href=&quot;https://www.tiobe.com/tiobe-index/&quot;&gt;TIOBE index&lt;/a&gt; ranking of popular programming languages.&lt;/p&gt;
 </content>
  </entry>
  
