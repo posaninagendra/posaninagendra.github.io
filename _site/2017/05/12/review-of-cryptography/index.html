@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      A review of Cryptography &middot; Nagendra Posani
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Nagendra Posani
+        </a>
+      </h1>
+      <p class="lead">A Computer Science Enthusiast, love to learn new technologies. <a href="mailto:nagendra@gatech.edu" target="_blank">Contact</a> me for any open source projects.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="/assets/resume.pdf">Resume</a>
+    </nav>
+    <a href="https://linkedin.com/in/posaninagendra" target="_blank">
+    <i class="fa fa-linkedin"></i></a>
+    &nbsp;
+    <a href="https://github.com/posaninagendra" target="_blank">
+    <i class="fa fa-github"></i></a>
+    &nbsp;
+    <a href="https://twitter.com/posaninagendra" target="_blank">
+    <i class="fa fa-twitter"></i></a>
+    &nbsp;
+    <a href="https://facebook.com/posaninagendra" target="_blank">
+    <i class="fa fa-facebook"></i></a>
+    &nbsp;
+    <a href="https://medium.com/@posaninagendra" target="_blank">
+    <i class="fa fa-medium"></i> 
+    </a>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">A review of Cryptography</h1>
+  <span class="post-date">12 May 2017</span>
+  <p>I’m writing this post partly for my comfort to quickly browse through the algorithms and protocols of Cryptography. I have taken many courses on Cryptography both in my undergrad and Masters. Having done many courses I get the rational of the protocols and its design but one does not have to memorize any protocol or algorithm instead one can construct then and there if required but it is always good to have a reference, more like a cheat sheet.</p>
+
+<p>The epicenter of cryptography is security. Security is about how to prevent attacks or if prevention is not possible, then how to detect and recover from them. In this context, an attack is a delibarate attempt to compromise a system. It usually exploits weakness of the system’s design, implementation, operation and management. Attacks can be passive or active.</p>
+
+<p>Passive Attacks:</p>
+<ul>
+  <li>Attacks can learn or make use of information from the system but does not affect the system resources.</li>
+  <li>Examples: Evasdropping message contents, traffic analysis</li>
+  <li>Difficult to detect and should be prevented.</li>
+</ul>
+
+<p>Active Attacks:</p>
+<ul>
+  <li>Attempts to alter system resources or affect their operations</li>
+  <li>Examples: Spoofing, replay, modification(substitution, insertion, destruction), denial of service.</li>
+  <li>Difficult to prevent and should be detected.</li>
+</ul>
+
+<p>The main services of security that helps us detect and/or prevent such attacks are as follows.</p>
+
+<ul>
+  <li>Authentication
+    <ul>
+      <li>Aims to detect masquerade</li>
+      <li>Provides assurance that the communicating entity is the one that it claims to be</li>
+    </ul>
+  </li>
+  <li>Authorization
+    <ul>
+      <li>Aims to prevent unauthorized access to resources</li>
+    </ul>
+  </li>
+  <li>Confidentiality
+    <ul>
+      <li>Aims to protect data from unauthorized discolsure</li>
+      <li>Based on encryption</li>
+    </ul>
+  </li>
+  <li>Integrity
+    <ul>
+      <li>Aims to detect the modification and replay</li>
+      <li>Provides the assurance that the message received is excatly as sent by the sender</li>
+    </ul>
+  </li>
+  <li>Non-Repudiation
+    <ul>
+      <li>Provides protection of the denial by one entity involved in a communcation of having participated in all or part of the communication</li>
+      <li>Two types (i) Non-repudiation of origin, (ii) Non-repudiation of delivery</li>
+    </ul>
+  </li>
+</ul>
+
+<p>The primary concern of many applications/systems are to provide security to their users/customers and based on the utility of the application/system one can provide all or few of these services.</p>
+
+<p>The standard Cryptography mechanisms that help us build these services are given below.</p>
+
+<ul>
+  <li>Encryption
+    <ul>
+      <li>Two basic types based on the key sharing techniques, Symmetric Key Encryption and Asymmetic (Public) Key Encryption.</li>
+    </ul>
+  </li>
+  <li>Authentication Protocols
+    <ul>
+      <li>Password based, Cryptographic challenge-response protocols, biometrics etc.</li>
+    </ul>
+  </li>
+  <li>Authorization Schemes
+    <ul>
+      <li>Access Control Lists (ACLs), Capabilities, Security Labels etc.</li>
+    </ul>
+  </li>
+  <li>Integrity Mecahnisms
+    <ul>
+      <li>Message Authentication Codes (MACs), Sequence numbering, time stamping, cryptography chaining etc.</li>
+    </ul>
+  </li>
+  <li>Digital Signatures
+    <ul>
+      <li>Based on Authentication, Non-repudiation and Integrity</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In this article, I’m justing briefing but if you want to understand the indepth of the algorithms or protocols, please refer the “want to know more” links in each section. I provided a hyperlink of some of the best online resources that I refered to understand them and it will help you to dive into the topic.</p>
+
+<h3 id="encryption">Encryption</h3>
+<p>The main objective is to provide confidentiality through authorization. In simple terms, it is a technique to protect the message by encoding it and can only be decoded if authorized. The goal of adversary is to systematicaly recover the plaintexts from ciphertexts and to deduce the key. The best way to go about it is by implementing the cryptosystem based on the Kerckhoff’s principle.</p>
+
+<p>Kirckhoff’s Pricinple:</p>
+<ul>
+  <li>One must assume that the adversary knows all the details of Encryption and Decryption</li>
+  <li>Security of the system should be based on the protection of the decryption key</li>
+</ul>
+
+<p>Now let us see, the types of adversary models to break the system.</p>
+
+<h4 id="adversary-models">Adversary Models</h4>
+<ul>
+  <li>Ciphertext-only Attack
+    <ul>
+      <li>The adversary can only observe ciphertexts produced by the same encryption key</li>
+    </ul>
+  </li>
+  <li>Known-plaintext Attack
+    <ul>
+      <li>The adversary can obtain corresponding plaintext-ciphertext pairs produced with the same encryption key</li>
+    </ul>
+  </li>
+  <li>Chosen Plaintext Attack
+    <ul>
+      <li>The adversary can choose the plaintexts and can get the corresponding ciphertexts</li>
+    </ul>
+  </li>
+  <li>Chosen Ciphertext Attach
+    <ul>
+      <li>The adversary can choose the ciphertexts and can get the corresponding plaintexts</li>
+    </ul>
+  </li>
+  <li>Related-key Attack
+    <ul>
+      <li>The adversary can obtain ciphertexts, or plaintext-ciphertext pairs that are produced with different encryption keys that are related in a known way to a specific encryption key</li>
+    </ul>
+  </li>
+</ul>
+
+<p>An encryption model is secure in a given adversary model if it is comupationally infeasible to determine the decryption key under the assumptions given in the model. Many encryption schemes used in practice have no-proof of security but these schemes are used because of its efficiency and resistance to all known attacks. Some encryption schemes are provable secure but they are often inefficient.</p>
+
+<p>P.S: <a href="https://blog.cryptographyengineering.com/2013/01/25/in-defense-of-provable-security/">Want to know more?</a></p>
+
+<h4 id="classic-encryption-schemes">Classic Encryption Schemes</h4>
+<ul>
+  <li>Symmetric Encryption
+    <ul>
+      <li>Encryption is based on a shared key (K), or can be constructed from a session key (K’)</li>
+      <li>Two main types:
+        <ul>
+          <li>Stream Ciphers: Operate on individual characters of the plaintext</li>
+          <li>Block Ciphers: Process the operation in larger blocks of characters.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Asymmetric Encryption
+    <ul>
+      <li>It is hard to computer the secret (private) key from public key</li>
+      <li>Known as Public Key Encryption</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="block-ciphers">Block Ciphers</h4>
+<p>One way to encrypt a very long plaintext message is by dividing it into n-bit blocks and every block is encrypted one at a time.</p>
+
+<h6 id="design-criteria-of-block-ciphers">Design Criteria of Block Ciphers</h6>
+<p>Complex encryption function can be built by composing several simple operations which offer complementary – but individually insufficient – protection. Some of the simple operations are elementary arithmetic operations, logical operations (e.g., XOR), modular multiplication, transpositions etc. Combine two or more transformations in a manner that the resulting cipher is more secure than the individual components. The design principle that need to be followed to ensure the security of the Block Ciphers are as follows.</p>
+
+<ul>
+  <li>Completeness
+    <ul>
+      <li>Each bit of the output block should depend on each bit of the input block and on each bit of the key</li>
+    </ul>
+  </li>
+  <li>Avalanche effect
+    <ul>
+      <li>Changing one bit in the input block should change approximately half of the bits in the output block</li>
+      <li>Similarly, changing one key bit should result in the change of approximately half of the bits in the output block</li>
+    </ul>
+  </li>
+  <li>Statistical independence
+    <ul>
+      <li>Input and output should appear to be statistically independent</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Consider m as the plaintext message, k as the secret key, E as the encryption scheme and c as the ciphertext. Let the message be a very long text so we divide the message into equal length blocks, say n, with padding of the last block to adjust the block size. Block cipher is seen as c<sub><em>i</em></sub> = E<sub><em>k</em></sub>(m<sub><em>i</em></sub>) for <em>i</em> = 1,…,n. The encryption algorithm used in block ciphers are two major standards of algorithms, they are Digital Encryption Standards (DES) and Advanced Encryption Standard (AES).</p>
+
+<h5 id="digital-encryption-standard-des">Digital Encryption Standard (DES)</h5>
+<ul>
+  <li>First published in 1977 and used as de-facto standard for backing security</li>
+  <li>An example of Feistel Cipher</li>
+  <li>Design criteria kept secret for more than 20 years</li>
+  <li>Block length is <em>64 bits</em>, Key length is <em>56 bits</em></li>
+  <li>Number of rounds is 16</li>
+  <li>Insecure due to small key space, prone to many attacks but can be used as 3-DES with two keys.</li>
+</ul>
+
+<p>Attacks on DES:</p>
+<ul>
+  <li>Exhaustive key search attacks
+    <ul>
+      <li>Given a small number of plaintext-ciphertext pairs encrypted under same key k, k can be recovered by exhaustive key search with 2 <sup>k-1</sup> processing power. To prevent this attack, in practice the key size should be at least 128 bits.</li>
+    </ul>
+  </li>
+  <li>Algebraic attacks
+    <ul>
+      <li>Having large key size is a necessary condition for security but not sufficient. It can be easily broken if the internal algebraic structure is weak. For example, to improve security if we implement DES to encrypt twice it doesn’t help, it suffers under <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">MITM attack</a>.</li>
+    </ul>
+  </li>
+</ul>
+
+<h5 id="advanced-encryption-standard-aes">Advanced Encryption Standard (AES)</h5>
+<ul>
+  <li>First approved in 2001 as <a href="https://www.nist.gov/publications/advanced-encryption-standard-aes">FIPS PUB 197</a>.</li>
+  <li>It is standardized version of <a href="http://csrc.nist.gov/archive/aes/rijndael/Rijndael-ammended.pdf">Rijndael algorithm</a></li>
+  <li>Block length is <em>128 bits</em></li>
+  <li>Key length is <em>128/192/256 bits</em> (N<sub>b</sub> x 32 bits, where N<sub>b</sub> = 4, 6, 8)</li>
+  <li>Number of rounds is 6 + N<sub>b</sub> where N<sub>b</sub> = 4, 6, 8</li>
+</ul>
+
+<h4 id="modes-of-encryption">Modes of Encryption</h4>
+<p>Soon after DES was made a US Federal standard, another US standard appeared giving four recommended ways of using DES for data encryption. These modes of operation have since been standardised internationally and can be used with any block cipher.</p>
+
+<h6 id="electronic-code-book-ecb">Electronic Code Book (ECB)</h6>
+<p>Simplest approach to using a block cipher. Plaintext m is divided into t blocks of n bits m<sub>1</sub>, m<sub>2</sub>,….,m<sub>t</sub> (the last block is padded if necessary). Ciphertext blocks c<sub>1</sub>, c<sub>2</sub>,….,c<sub>t</sub> are defined as follows:
+c<sub>i</sub> = E<sub>k</sub>(m<sub>i</sub>).
+<img src="/assets/review-of-crypto/ecb.png" alt="img1" />
+Note that if m<sub>i</sub> = m<sub>j</sub> then we have c<sub>i</sub>, c<sub>j</sub> thus patterns in plaintext reappear in ciphertext.</p>
+
+<p>Properties:</p>
+<ul>
+  <li>Identical plaintext blocks result in identical ciphertext blocks (under the same key)</li>
+  <li>Blocks are encrypted independently of other blocks, reordering ciphertext blocks result in correspondingly reordered plaintext blocks</li>
+  <li>Error propagation: one bit error in a ciphertext block affects only the corresponding plaintext block (results in garbage)</li>
+</ul>
+
+<p>Not recommended for messages longer than one block, or if keys are reused for more than one block.</p>
+
+<h6 id="cipher-block-chaining-cbc">Cipher Block Chaining (CBC)</h6>
+<p>Plaintext m is divided into t blocks of n bits m<sub>1</sub>, m<sub>2</sub>,….,m<sub>t</sub> (the last block is padded if necessary).
+Encryption:</p>
+<ul>
+  <li>c<sub>1</sub> = E<sub>k</sub>(m<sub>1</sub> XOR IV)</li>
+  <li>c<sub>i</sub> = E<sub>k</sub>(m<sub>i</sub> XOR c<sub>i-1</sub>) for i &gt; 1
+<img src="/assets/review-of-crypto/cbc.png" alt="img2" />
+Properties:</li>
+  <li>Encrypting the same plaintexts under the same key, but different IVs result in different ciphertexts</li>
+  <li>Ciphertext block c<sub>i</sub> depends on m<sub>i</sub> and all preceding plaintext blocks</li>
+  <li>Error propagation: one bit error in a ciphertext block c<sub>i</sub> has an effect on the i<sup>th</sup> and (i+1)<sup>st</sup> plaintext block</li>
+  <li>The IV need not be secret, but its integrity should be protected.</li>
+</ul>
+
+<h6 id="cipher-feed-back-cfb">Cipher Feed Back (CFB)</h6>
+<p>This mode enables a block cipher to be used as a stream cipher. In CFB Mode the keystream is generated by Encrypting the
+IV and n bits of ciphertext. 
+<img src="/assets/review-of-crypto/cfb.png" alt="img3" />
+Properties:</p>
+<ul>
+  <li>Encrypting the same plaintexts under the same key, but different IVs result in different ciphertexts</li>
+  <li>Ciphertext block c<sub>i</sub> depends on m<sub>i</sub> and all preceding plaintext blocks</li>
+  <li>Error propagation: one bit error in a ciphertext block c<sub>i</sub> has an effect on the decryption of that and the next n/s ciphertext blocks (the error remains in the shift register for n/s steps)</li>
+</ul>
+
+<h6 id="output-feed-back-ofb">Output Feed Back (OFB)</h6>
+<p>OFB is same CFB that enables a block cipher to be used as a stream cipher. In OFB Mode the keystream is generated by: Encrypting the IV and the output from this encryption.
+<img src="/assets/review-of-crypto/ofb.png" alt="img4" />
+Properties:</p>
+<ul>
+  <li>A different IV should be used for every new message, otherwise messages will be encrypted with the same key stream</li>
+  <li>Ciphertext block c<sub>i</sub> depends on m<sub>i</sub> only (does not depend on the preceding plaintext blocks)</li>
+  <li>Error propagation: one bit error in a ciphertext block c<sub>i</sub> has an effect on the decryption of only that ciphertext block</li>
+</ul>
+
+<h6 id="counter-mode-ctr">Counter Mode (CTR)</h6>
+<p>Similar to ECB, takes advantages of ECB but not disadvantages. IV used in each block encryption with an increment of counter.
+<img src="/assets/review-of-crypto/ctr.png" alt="img5" />
+Properies:</p>
+<ul>
+  <li>Cycle length depends on the size of the counter (typically 2<sup>n</sup>)</li>
+  <li>The values to be XORed with the plaintext can be pre-computed.</li>
+</ul>
+
+<p>Note: In CFB, OFB, and CTR mode only the encryption algorithm is used (decryption is not needed), that is why some ciphers (e.g., AES) is optimized for encryption. The OFB and CTR modes essentially make a synchronous stream cipher out of a block cipher, whereas the CFB mode converts a block cipher into a self-synchronizing stream-cipher.</p>
+
+<p>P.S: <a href="http://www.computing.dcu.ie/~hamilton/teaching/CA642/notes/Block.pdf">Want to know more?</a></p>
+
+<h4 id="stream-ciphers">Stream Ciphers</h4>
+<p>They encrypt individual characters (usually binary digits) of a plaintext message one at a time, using an encryption transformation which varies with time. By contrast, block ciphers simultaneously encrypt groups of characters, stream ciphers are usually faster than block ciphers in hardware (but not necessarily in software). It has limited or no error propagation may be advantageous when transmission errors are probable.</p>
+
+<h6 id="one-time-pad">One-time Pad</h6>
+<p>It is similary to Vernam cipher(c<sub>i</sub> = m<sub>i</sub> XOR k<sub>i</sub>) where the key stream digits are generated independently and uniformly at random. It is unconditionally secure against a ciphertext-only attack.  More precisely, if
+M, C, and K are random variables respectively denoting the plaintext, ciphertext, and secret key, and if H() denotes the entropy function, then H(M|C) = H(M).  Equivalently, I(M|C) = 0, the quantity can be thought of as the amount of information that C reveals about M i.e., the ciphertext contributes no information about the plaintext.</p>
+
+<h6 id="synchronous-stream-ciphers">Synchronous stream ciphers</h6>
+<p>The key stream is generated independently of the plaintext and of the ciphertext, needs synchronization between the sender and the receiver. If a character is inserted into or deleted from the ciphertext stream then synchronization is lost and the plaintext cannot be recovered additional techniques must be used to recover from loss of synch. A ciphertext character that is modified during transmission affects only the decryption of that character an attacker can make changes to selected ciphertext characters and know exactly what effect these changes have on the plaintext (if h = XOR)
+<img src="/assets/review-of-crypto/ss.png" alt="img6" /></p>
+
+<h6 id="self-synchronizing-stream-ciphers">Self-synchronizing stream ciphers</h6>
+<p>The key stream is generated as a function of a fixed number of previous ciphertext characters. Self-synchronizing since the size t of the register is fixed, a lost ciphertext character affects only the decryption of the next t ciphertext characters. Limited error propagation if a ciphertext character is modified, then decryption of the next t ciphertext characters may be incorrect ciphertext characters depend on all previous plaintext characters better diffusion of plaintext statistics.</p>
+
+<p><img src="/assets/review-of-crypto/sss.png" alt="img7" />
+P.S: <a href="http://cacr.uwaterloo.ca/hac/about/chap6.pdf">Want to know more?</a></p>
+
+<h4 id="asymmetricpublic-key-encryption">Asymmetric(Public) Key Encryption</h4>
+<p>The definition of encryption in the public-key setting is very similar to the definition in the shared-key setting, but since public keys allow encryption and are known to all principals by assumption, every principal has access to an encryption machine as in the CPA attack model. In shared key encryption we can talk about security of schemes when an adversary has seen the encryption of only one message. But, since adversaries have access to encryption functions by default in the public-key setting, public-key encryption schemes must always be secure under CPA.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/07/18/modern-authentication/">
+            The AAs of security, Authentication & Authorization
+            <small>18 Jul 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/06/19/core-data/">
+            Core Data Explained
+            <small>19 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/06/02/wkwebview-uiwebview/">
+            Web Views in iOS
+            <small>02 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>

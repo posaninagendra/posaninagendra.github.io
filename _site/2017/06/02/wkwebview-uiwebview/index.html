@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Web Views in iOS &middot; Nagendra Posani
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  
+</head>
+
+
+  <body class="theme-base-08">
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Nagendra Posani
+        </a>
+      </h1>
+      <p class="lead">A Computer Science Enthusiast, love to learn new technologies. <a href="mailto:nagendra@gatech.edu" target="_blank">Contact</a> me for any open source projects.</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+
+      <a class="sidebar-nav-item" href="/assets/resume.pdf">Resume</a>
+    </nav>
+    <a href="https://linkedin.com/in/posaninagendra" target="_blank">
+    <i class="fa fa-linkedin"></i></a>
+    &nbsp;
+    <a href="https://github.com/posaninagendra" target="_blank">
+    <i class="fa fa-github"></i></a>
+    &nbsp;
+    <a href="https://twitter.com/posaninagendra" target="_blank">
+    <i class="fa fa-twitter"></i></a>
+    &nbsp;
+    <a href="https://facebook.com/posaninagendra" target="_blank">
+    <i class="fa fa-facebook"></i></a>
+    &nbsp;
+    <a href="https://medium.com/@posaninagendra" target="_blank">
+    <i class="fa fa-medium"></i> 
+    </a>
+    <p>&copy; 2017. All rights reserved.</p>
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Web Views in iOS</h1>
+  <span class="post-date">02 Jun 2017</span>
+  <p>The two different class of web views that are supported in iOS are WKWebView and UIWebView. There are obvious fundamental differences between these two classes that eases the decision-making process.</p>
+
+<p>In WWDC 2014, Apple introduced WebKit with a brand new WKWebView as a better version of the existing web view (i.e. UIWebView) in the UIKit. It is well known that UIWebView suffers from some major issues like the memory leak, and can throttle the application that heavily dependent on web views. As a fix to many such issues, Apple released the new <a href="https://developer.apple.com/documentation/webkit">WebKit</a> with many new features majority of them are improvements in performance and user experience. Apple recommends to use WKWebView in the applications that plan to heavily consume them, but it is good to know the what are the pros and cons of this new framework.</p>
+
+<h2 id="wkwebview-how-different-from-uiwebview">WKWebView: How different from UIWebView?</h2>
+
+<p>The list of differences is given below.</p>
+
+<h3 id="the-pros">The Pros</h3>
+<ul>
+  <li>Runs outside of the app’s main process</li>
+  <li>Uses Nitro, a faster JavaScript engine</li>
+  <li>Supports server-side authentication challenges</li>
+  <li>Supports authenticating self-signed security certificates &amp; certificates with errors</li>
+  <li>Handles JavaScript asynchronously</li>
+  <li>Eliminates certain touch delays</li>
+</ul>
+
+<h3 id="the-cons">The Cons</h3>
+<ul>
+  <li>Requires iOS 8 or later</li>
+  <li>Does not support AJAX requests to locally-stored files</li>
+  <li>Does not support ‘Accept Cookies’ setting</li>
+  <li>Does not support ‘Advanced Cache Settings’</li>
+  <li>HTML5 local storage clears when app is exited</li>
+  <li>Does not support logging of WebKit requests</li>
+  <li>May not capture screenshots as expected</li>
+</ul>
+
+<p>A brief description of these differences:</p>
+
+<p><strong>Runs outside of the app’s main process</strong>: This is probably the biggest performance boost to the apps that heavily depend on web views. Running a web view in the app consumes a significant amount of memory and processing power for rendering the web pages. In worst case, the app might even crash because it has reached maximum memory limit. In order to escalate this, you can switch from UIWebView to WKWebView. Apple solves this problem by launching a new process for web view and it consumes all the resources outside of your app, the downside of this alternative is you might not be able to intercept and modify the requests to a proxy server, whereas in UIWebView you can pretty much do anything related to the requests.</p>
+
+<p><strong>Uses Nitro, a faster JavaScript engine</strong>: Since WKWebView is launched as a new process Apple replaced the default javascript engine with Nitro, an advanced javascript engine as it doesn’t effect apps resources and the apps can also leverage this for better user experience.</p>
+
+<p><strong>Supports server-side authentication challenges</strong>: It supports server side authentication challenges and cookie storage.</p>
+
+<p><strong>Supports authenticating self-signed security certificates &amp; certificates with errors</strong>: It supports self-signed security certificates and in the case of errors you can still be able to load the web page (this feature is added to Swift 3).</p>
+
+<p><strong>Handles JavaScript asynchronously</strong>: As most of the modern web pages make server requests to render the data, WKWebView handles them asynchronously.</p>
+
+<p><strong>Eliminates certain touch delays</strong>: UIWebView doesn’t handle the touch gestures smoothly, WKWebView has better optimizations to handle them seamlessly.</p>
+
+<p>Apple recommends WKWebView over UIWebView so that apps can leverage the memory and process optimizations, but it depends on what you want to solve, to handle the server requests better one might prefer to use UIWebView, but in general WKWebView is the best.</p>
+
+<p>Here is a good article that describes the intricacies of the <a href="https://github.com/ShingoFukuyama/WKWebViewTips">WKWebView</a>.</p>
+
+
+</div>
+
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/07/18/modern-authentication/">
+            The AAs of security, Authentication & Authorization
+            <small>18 Jul 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/06/19/core-data/">
+            Core Data Explained
+            <small>19 Jun 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2017/05/12/review-of-cryptography/">
+            A review of Cryptography
+            <small>12 May 2017</small>
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+    </div>
+
+  </body>
+</html>
