@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Networks on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/computer-networks/</link>
+    <description>Recent content in Computer Networks on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/computer-networks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multicasting in Delay Tolerant Networks</title>
+      <link>https://posaninagendra.github.io/post/2016-12-12-multicasting-in-dtn/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2016-12-12-multicasting-in-dtn/</guid>
+      <description>Delay tolerant networks are named so since the connections between nodes are intermittent and hence lack instantaneous end-to-end sender-to-receiver paths. This is particularly applicable to systems that suffer disruption in infrastructure leading to huge delays in message delivery. There can be many real-life applications of delay tolerant networking like emergency response, military systems, vehicular systems and deep-space communication.
+In such scenarios, there is no network infrastructure to establish an end-to-end communication path between two nodes.</description>
+    </item>
+    
+  </channel>
+</rss>

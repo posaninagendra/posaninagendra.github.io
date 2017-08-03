@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/security/</link>
+    <description>Recent content in Security on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Jul 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The AAs of security, Authentication &amp; Authorization</title>
+      <link>https://posaninagendra.github.io/post/2017-07-18-modern-authentication/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-07-18-modern-authentication/</guid>
+      <description>Authentication and Authorization are the two fundamentals of security that we are dealing today. With rapid increase of the usage of computers, cell phones and other smart devices like tablets, smart watches and other IoT devices, applications authenticating its users on various devices has become a crucial problem. Also, now-a-days many companies are coming up with multiple related yet independent software products and authenticating their users on each of these applications and granting authorization access to the resources has become a challenging problem.</description>
+    </item>
+    
+    <item>
+      <title>Web Views in iOS</title>
+      <link>https://posaninagendra.github.io/post/2017-06-02-wkwebview-uiwebview/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-06-02-wkwebview-uiwebview/</guid>
+      <description>The two different class of web views that are supported in iOS are WKWebView and UIWebView. There are obvious fundamental differences between these two classes that eases the decision-making process.
+In WWDC 2014, Apple introduced WebKit with a brand new WKWebView as a better version of the existing web view (i.e. UIWebView) in the UIKit. It is well known that UIWebView suffers from some major issues like the memory leak, and can throttle the application that heavily dependent on web views.</description>
+    </item>
+    
+    <item>
+      <title>iOS App Certificates and Distribution</title>
+      <link>https://posaninagendra.github.io/post/2016-06-14-ios-certificates-distribution/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2016-06-14-ios-certificates-distribution/</guid>
+      <description>Well, it is not a rocket science to create certificates and distribute the app to the testers/users, but if you are doing it for the first time you may have to google about the process. Often the developers get frustrated with Apple’s security scheme to distribute the app, but trust me that’s the prime reason why Apple’s App Store has many trusted apps over Android’s Play Store. Though there are many Stack Overflow links out there which helps you to finish this setup but I want to summarize and give a brief idea of everything related to the process of creating certificates, generating builds and uploading it to the App Store.</description>
+    </item>
+    
+  </channel>
+</rss>
