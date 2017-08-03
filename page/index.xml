@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/page/</link>
+    <description>Recent content in Pages on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 02 Mar 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Projects</title>
+      <link>https://posaninagendra.github.io/page/projects/</link>
+      <pubDate>Wed, 02 Mar 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/page/projects/</guid>
+      <description>Now a days everyone wants to learn to code and slowly it has become an indispensable skill. According to me, learning new languages isn&amp;rsquo;t enough, we have to be comfortable with the technologies and be able to work with it. The rapid evolution of technology forces us to constantly reconsider which skills are in demand. Learning new technologies or being up to date with what we already know is very important.</description>
+    </item>
+    
+  </channel>
+</rss>

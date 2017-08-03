@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xcode on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/xcode/</link>
+    <description>Recent content in Xcode on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Core Data Explained</title>
+      <link>https://posaninagendra.github.io/post/2017-06-19-core-data/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-06-19-core-data/</guid>
+      <description>Core data is one of the most misunderstood frameworks in iOS. If one understands the individual components of the framework and its usage, it is one of the easy to use frameworks. Lets go through the individual components to get an overview of this framework and see its usage through swift code snippets and throw away the frustration.
+Core data framework is a model layer and persistent technology. It helps you build the model layer that represents the state of your application and perform store and retrieve operations of data through objects persistently.</description>
+    </item>
+    
+    <item>
+      <title>Web Views in iOS</title>
+      <link>https://posaninagendra.github.io/post/2017-06-02-wkwebview-uiwebview/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-06-02-wkwebview-uiwebview/</guid>
+      <description>The two different class of web views that are supported in iOS are WKWebView and UIWebView. There are obvious fundamental differences between these two classes that eases the decision-making process.
+In WWDC 2014, Apple introduced WebKit with a brand new WKWebView as a better version of the existing web view (i.e. UIWebView) in the UIKit. It is well known that UIWebView suffers from some major issues like the memory leak, and can throttle the application that heavily dependent on web views.</description>
+    </item>
+    
+    <item>
+      <title>Elastic Search Client Library</title>
+      <link>https://posaninagendra.github.io/post/2017-03-22-elastic-search/</link>
+      <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-03-22-elastic-search/</guid>
+      <description>When I first heard of Elastic Search from my friend, I imagined it to be an easily scalable search engine from the word elastic. I was fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by Shay Banon. It is a multi-tenant system, reliable and scalable.
+We all use Google for searching, when we do a search query we get the results a few fraction of seconds, ever wondered what goes behind the scenes to implement such a robust and efficient system?</description>
+    </item>
+    
+    <item>
+      <title>iOS Development</title>
+      <link>https://posaninagendra.github.io/post/2017-03-20-ios-projects/</link>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-03-20-ios-projects/</guid>
+      <description>I served as iOS Developer at Kuliza Technologies, in Bangalore for 1.7 years. During this period I worked on various projects and repeatedly recognized for my performance in developing complex mobile applications for multimillion-dollar clients. I am responsible for full lifecycle development of iOS mobile applications, from initial requirement gathering to architecture design, coding, dev-testing, and shipping it to App Store. I have developed about 12 iPhone and 2 Apple Watch applications to various clients, which are deployed on App Store, few of them got more than a million downloads.</description>
+    </item>
+    
+    <item>
+      <title>iOS App Certificates and Distribution</title>
+      <link>https://posaninagendra.github.io/post/2016-06-14-ios-certificates-distribution/</link>
+      <pubDate>Tue, 14 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2016-06-14-ios-certificates-distribution/</guid>
+      <description>Well, it is not a rocket science to create certificates and distribute the app to the testers/users, but if you are doing it for the first time you may have to google about the process. Often the developers get frustrated with Apple’s security scheme to distribute the app, but trust me that’s the prime reason why Apple’s App Store has many trusted apps over Android’s Play Store. Though there are many Stack Overflow links out there which helps you to finish this setup but I want to summarize and give a brief idea of everything related to the process of creating certificates, generating builds and uploading it to the App Store.</description>
+    </item>
+    
+  </channel>
+</rss>

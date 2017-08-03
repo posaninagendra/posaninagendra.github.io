@@ -1,0 +1,323 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Nagendra Posani">
+		<meta name="description" content="My Excerpts">
+		<meta name="generator" content="Hugo 0.25.1" />
+		<title>Core Data Explained &middot; Nagendra Posani</title>
+		<link rel="shortcut icon" href="https://posaninagendra.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://posaninagendra.github.io/css/style.css">
+		<link rel="stylesheet" href="https://posaninagendra.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://posaninagendra.github.io/css/font-awesome.min.css">
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://posaninagendra.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://posaninagendra.github.io/post'>Archive</a>
+	<a href='https://posaninagendra.github.io/tags'>Tags</a>
+	<a href='https://posaninagendra.github.io/about'>About</a>
+<a href='https://posaninagendra.github.io/assets/resume.pdf'>Resume</a>
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        Core Data Explained
+                    </h1>
+                    <h2 class="headline">
+                    Jun 9, 2017 00:00
+                    · 1662 words
+                    · 8 minutes read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://posaninagendra.github.io/tags/objective-c">Objective-C</a>
+                          
+                              <a href="https://posaninagendra.github.io/tags/swift">Swift</a>
+                          
+                              <a href="https://posaninagendra.github.io/tags/development">development</a>
+                          
+                              <a href="https://posaninagendra.github.io/tags/xcode">xcode</a>
+                          
+                              <a href="https://posaninagendra.github.io/tags/database">database</a>
+                          
+                              <a href="https://posaninagendra.github.io/tags/sqlite">SQLite</a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<p>Core data is one of the most misunderstood frameworks in iOS. If one understands the individual components of the framework and its usage, it is one of the easy to use frameworks. Lets go through the individual components to get an overview of this framework and see its usage through swift code snippets and throw away the frustration.</p>
+
+<p>Core data framework is a model layer and persistent technology. It helps you build the model layer that represents the state of your application and perform store and retrieve operations of data through objects persistently. It is not just a SQL Wrapper, it is much more than that, the most powerful feature of core data is its object graph management and it provides higher level of abstraction of the database.</p>
+
+<p>The main principle behind this framework is letting the app to store its data in the form of objects directly in to the database tables. It provides APIs which implements heavy operations like save, delete and fetch optimally.</p>
+
+<p>The Core data stack consists of four components as listed below.</p>
+
+<ol>
+<li>Managed Object Context</li>
+<li>Persistent Store Coordinator</li>
+<li>Persistent Store</li>
+<li>SQLite Store</li>
+</ol>
+
+<p>All the components are inter linked and yet they are flexible to use. Lets go through each component.</p>
+
+<h3 id="managed-object-context">Managed Object Context</h3>
+
+<p>This component is the only component with which the app communicates. Consider this component as a scratch pad where you can write and read the objects and after all the changes made, you can save them to the store. Technically an application can have more than one context and each context can have any number of objects, the object knows in which context it is in and the context knows all its objects.</p>
+
+<p>The object graph management is maintained in this component. Since it is in direct connection to the app, which creates the objects and saves them to the context and the context maintains the graph of these objects until they are saved in the store. For example, if we have an application with entities like student, faculty and department and corresponding tables in the database with established relationships. When you create a student object with a relation to department, Managed Object Context understands this and maintains the relationships and in future if you update any of the relationships it updates the graph accordingly, it is the same case with fetched objects from store.</p>
+
+<h3 id="persistent-store-coordinator">Persistent Store Coordinator</h3>
+
+<p>As the name suggests this component coordinates the contexts and stores to which they are connected. It is like a central scrutinizer which connects the contexts and stores. Technically you can have many number of stores and contexts, so this component connects a particular context to a store. It ties the object management part and persistent storage part of this framework.</p>
+
+<p><img src="/assets/core-data/psc.png" alt="img1" /></p>
+
+<p>In earlier versions of iOS, before iOS 10, to use core data we had to create the complete stack from the persistent store coordinator to a store and context. But from iOS 10 the APIs are made easy to create the Core Data stack.</p>
+
+<h3 id="persistent-store">Persistent Store</h3>
+
+<p>This is the part of the stack where persistency happens. The persistent store gives the abstraction of actual database and it provides wrapper methods to the requests. Behind the scenes it creates SQL statements to the requests that it receives and stores them in the file system.</p>
+
+<p>In case if you want to customize the store to use your own database rather than using standard SQLite store, you can achieve that by subclassing the <code>NSIncrementalStore</code> which is an abstract class to implement your own storage.</p>
+
+<h2 id="how-these-components-work-together">How these components work together?</h2>
+
+<p>Before I explain how they work together, let me introduce to the nomenclature used by Apple in Core Data framework and its contextual meaning.</p>
+
+<p>Swift is slowly getting rid of the NS prefix to its APIs but it didn&rsquo;t reach to the Core Data yet so as of today we still have NS prefix in Core Data. We are already familiar with Managed Object Context, Persistent Store Coordinator and Persistent Store, they are called <code>NSManagedObjectContext</code>, <code>NSPersistentStoreCoordinator</code> and <code>NSPersistentStore</code> respectively. Apart from them we have few more components as we dive deep in to the framework like, Managed Object Model (<code>NSManagedObjectModel</code>), Entity Description (<code>NSEntityDescription</code>), Fetch Request (<code>NSFetchRequest</code>), Mapping Model (<code>NSMappingModel</code>), Migration Manager (<code>NSMigrationManager</code>) etc.</p>
+
+<p>Managed Object Model is simply a model that has the information of all the entity schemas, a store coordinator is created using this model, letting it know that what kind of objects it would see. You can have different versions of this models, as your app grows you might want to update the tables (or entities) by adding/deleting properties or adding new entities etc, in all these cases you will be creating a new version of this model.</p>
+
+<p>Entity Description is associated to a specific entity and is represented as the entries of the persistent store. It also ties the entity object to the context in which it is going to be written, along with that it has other information related to entity management.</p>
+
+<p>Fetch request is the abstraction of database queries to retrieve data. You can create general fetch request of all the objects of a specific entity or be more specific and define the filters on attributes like SQLite queries by adding predicate (<code>NSPredicate</code>) to the request.</p>
+
+<p>Mapping model and migration manager are handy components when you are dealing with migration of schema and data in the database. Mapping model explicitly defines the mapping from old schema to the new schema to ease the migration process. This is consumed by the migration manager which performs the actual migration.
+See the flow diagram give below to understand the Core Data stack.
+<p align="center">
+<img src="/assets/core-data/cdstack.png">
+</p>
+To explain the work flow, lets consider an example, we are building a Winestore and it has entities like wine, winery and region. Lets create these entities in core data model file, the framework provides a UI interface to create the entities and define the relationships between them. Managed object model is a <code>.mom</code> file that is created by this data model that we created, can be referred as file-manager path URL by the persistent store coordinator.</p>
+
+<p>Once we have entities created, we want the app to create few records or consume them, for this we need a context to write and read, lets go ahead and create a context. To define the context we need a store coordinator to connect with and to create the store coordinator we need managed object model because the store coordinator should know what objects it is talking with.</p>
+
+<pre><code class="language-swift">// First get the model URL, for that look for .mom
+// file in the directory with the resource name as the name of your .xcdatamodel
+
+let bundle = Bundle.main
+let modelPath = bundle.path(forResource: resource, ofType: &quot;mom&quot;)
+modelUrl = URL(fileURLWithPath: modelPath!)
+
+// Create the model and persistent store coordinator
+let model = NSManagedObjectModel(contentsOf: modelUrl)
+let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model!)
+
+// Create context and link it to the store coordinator
+let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+context.persistentStoreCoordinator = coordinator
+</code></pre>
+
+<p>Wondering why we haven&rsquo;t created the persistent store explicitly? Well, it is done silently by Persistent Store Coordinator, by default it creates <code>NSSQLiteStore</code> but in case if you want to create your own store in place of the default behavior you can do that as given below.</p>
+
+<pre><code class="language-swift">NSPersistentStoreCoordinator.registerStoreClass(CustomStoreClass.self,
+ forStoreType: CustomStoreType)
+
+let store = try coordinator.addPersistentStore(ofType: CustomStoreType,
+configurationName: nil, at: storeUrl, options: storeOptions)
+</code></pre>
+
+<p>To define your own store you need to subclass <code>NSIncrementalStore</code> and implement the persistent store protocol methods and register it to the store coordinator to link to this new store instead of the default store.</p>
+
+<p>Once we have the context, we can add objects, fetch and delete. Some of the operations are give below.</p>
+
+<pre><code class="language-swift">// Save
+let wine = Wine(entity: wineEntity, insertInto: context)
+wine.wineId = 12562
+wine.name = &quot;Wine Pro&quot;
+wine.wineDescription = &quot;Wine Pro&quot;
+wine.type = &quot;Oldest wines&quot;
+wine.year = 1970
+
+context.save()
+
+// Fetch
+let wineFetch = NSFetchRequest&lt;Wine&gt;(entityName: &quot;Wine&quot;)
+wineFetch.predicate = NSPredicate(format: &quot;wineDescription BEGINSWITH[cd] %@&quot;, &quot;Wine&quot;)
+
+let wineCount = try context.count(for: wineFetch)
+</code></pre>
+
+<p>From iOS 10+ creating core data stack made very simple, Apple added another layer of abstraction to handle the stack creation in the class <code>NSPersistentContrainer</code> which creates the stack and using the object of this class you can access the context through its parameters and perform the operations.</p>
+
+<pre><code class="language-swift">
+lazy var persistentContainer: NSPersistentContainer = {
+      /*
+       The persistent container for the application. This implementation
+       creates and returns a container, having loaded the store for the
+       application to it. This property is optional since there are legitimate
+       error conditions that could cause the creation of the store to fail.
+      */
+      let container = NSPersistentContainer(name: &quot;ToDO_App&quot;)
+      container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+          if let error = error as NSError? {
+              // Replace this implementation with code to handle the error appropriately.
+              // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+
+              /*
+               Typical reasons for an error here include:
+               * The parent directory does not exist, cannot be created, or disallows writing.
+               * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+               * The device is out of space.
+               * The store could not be migrated to the current model version.
+               Check the error message to determine what the actual problem was.
+               */
+              fatalError(&quot;Unresolved error \(error), \(error.userInfo)&quot;)
+          }
+      })
+      return container
+  }()
+
+func saveContext () {
+      let context = persistentContainer.viewContext
+      if context.hasChanges {
+          do {
+              try context.save()
+          } catch {
+              // Replace this implementation with code to handle the error appropriately.
+              // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+              let nserror = error as NSError
+              fatalError(&quot;Unresolved error \(nserror), \(nserror.userInfo)&quot;)
+          }
+      }
+  }
+
+</code></pre>
+
+<p>Some of the good articles that I referred while I was working on core data are given below.</p>
+
+<ul>
+<li><a href="https://www.objc.io/issues/4-core-data/">Objc.io Core data articles</a></li>
+<li><a href="https://www.raywenderlich.com/145809/getting-started-core-data-tutorial">Raywenderlich Article on Core data</a></li>
+<li><a href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreData/index.html">Apple documentation of Core data</a></li>
+</ul>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'nagendraposani'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/posaninagendra">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/posaninagendra">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.linkedin.com/in/posaninagendra">
+        <i class="fa fa-linkedin-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.medium.com/@posaninagendra">
+        <i class="fa fa-medium-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/posaninagendra">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2017 <i class="fa fa-heart" aria-hidden="true"></i> Nagendra Posani
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://posaninagendra.github.io/js/jquery-2.2.4.min.js"></script>
+<script src="https://posaninagendra.github.io/js/main.js"></script>
+<script src="https://posaninagendra.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '(function(i,s,o,g,r,a,m){i[\x27GoogleAnalyticsObject\x27]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\x27script\x27,\x27https:\/\/www.google-analytics.com\/analytics.js\x27,\x27ga\x27);ga(\x27create\x27, \x27{{ site.google_analytics }}\x27, \x27auto\x27);ga(\x27send\x27, \x27pageview\x27);', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/</link>
+    <description>Recent content in Tags on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Computer Networks</title>
+      <link>https://posaninagendra.github.io/tags/computer-networks/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/computer-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://posaninagendra.github.io/tags/database/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://posaninagendra.github.io/tags/development/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elastic Search</title>
+      <link>https://posaninagendra.github.io/tags/elastic-search/</link>
+      <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/elastic-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://posaninagendra.github.io/tags/java/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Objective C</title>
+      <link>https://posaninagendra.github.io/tags/objective-c/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/objective-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protocol</title>
+      <link>https://posaninagendra.github.io/tags/protocol/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/protocol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://posaninagendra.github.io/tags/python/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://posaninagendra.github.io/tags/security/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sqlite</title>
+      <link>https://posaninagendra.github.io/tags/sqlite/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/sqlite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://posaninagendra.github.io/tags/swift/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://posaninagendra.github.io/tags/tools/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Xcode</title>
+      <link>https://posaninagendra.github.io/tags/xcode/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/tags/xcode/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

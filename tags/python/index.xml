@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/python/</link>
+    <description>Recent content in Python on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Dec 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alphanumeric Shellcode Generators</title>
+      <link>https://posaninagendra.github.io/post/2014-12-28-alphanumeric-shellcode-generator/</link>
+      <pubDate>Sun, 28 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2014-12-28-alphanumeric-shellcode-generator/</guid>
+      <description>A common and important class of attack on computer systems is the code injection attack. This attack has two phases: a) injection of code (a.k.a. the shellcode), and b) execution of the injected code. Typically, code is injected in placeholders for data. So, while the target program expects data, the attacker instead sends code (disguised as data). The attacker then redirects the program execution to the injected code. To do this, the attacker can exploit program vulnerabilities such as buffer overflows.</description>
+    </item>
+    
+  </channel>
+</rss>

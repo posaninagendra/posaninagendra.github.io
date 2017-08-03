@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elastic Search on Nagendra Posani</title>
+    <link>https://posaninagendra.github.io/tags/elastic-search/</link>
+    <description>Recent content in Elastic Search on Nagendra Posani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://posaninagendra.github.io/tags/elastic-search/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Elastic Search Client Library</title>
+      <link>https://posaninagendra.github.io/post/2017-03-22-elastic-search/</link>
+      <pubDate>Wed, 22 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://posaninagendra.github.io/post/2017-03-22-elastic-search/</guid>
+      <description>When I first heard of Elastic Search from my friend, I imagined it to be an easily scalable search engine from the word elastic. I was fascinated by hearing great features of this smart engine. Here is a little trivia about this amazing technology. Elastic Search is an open source distributed, RESTful search engine, developed by Shay Banon. It is a multi-tenant system, reliable and scalable.
+We all use Google for searching, when we do a search query we get the results a few fraction of seconds, ever wondered what goes behind the scenes to implement such a robust and efficient system?</description>
+    </item>
+    
+  </channel>
+</rss>
